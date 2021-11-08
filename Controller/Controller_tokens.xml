@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tokens>
+	<token name="MODEL_NAME"><![CDATA[Controller]]></token>
+	<token name="20SIM_DIR"><![CDATA[C:\Program Files (x86)\20-sim 4.8]]></token>
+	<token name="SUBMODEL_NAME"><![CDATA[Controller]]></token>
+	<token name="ALGLOOP_NAMES"><![CDATA[	NULL]]></token>
+	<token name="ALGLOOP_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="ALGLOOP_NAMES3"><![CDATA[]]></token>
+	<token name="ALGLOOP_UNITS"><![CDATA[]]></token>
+	<token name="ALIAS_EQUATIONS"><![CDATA[	/* ControllerPan\PlusMinus1\minus1 = ControllerPan\MeasuredPan; */
+	m_V[18] = m_V[3];
+
+	/* ControllerPan\PlusMinus1\plus1 = ControllerPan\SetPointPan; */
+	m_V[17] = m_V[4];
+
+	/* ControllerTilt\PlusMinus\minus1 = ControllerTilt\MeasuredTilt; */
+	m_V[22] = m_V[8];
+
+	/* ControllerTilt\PlusMinus\plus1 = ControllerTilt\SetPointTilt; */
+	m_V[21] = m_V[9];
+
+	/* ControllerPan\PID_Pan\error = ControllerPan\PlusMinus1\output; */
+	m_V[16] = m_V[2];
+
+	/* ControllerTilt\PID_Tilt\error = ControllerTilt\PlusMinus\output; */
+	m_V[20] = m_V[7];
+
+	/* ControllerPan\SteeringPan = ControllerPan\PID_Pan\output; */
+	m_V[19] = m_V[0];
+
+	/* ControllerTilt\SteeringTilt = ControllerTilt\PID_Tilt\output; */
+	m_V[23] = m_V[5];
+]]></token>
+	<token name="ALIAS_MATRIX_NAMES"><![CDATA[	NULL
+]]></token>
+	<token name="ALIAS_MATRIX_NAMES2"><![CDATA[	NULL
+]]></token>
+	<token name="ALIAS_MATRIX_NAMES3"><![CDATA[
+]]></token>
+	<token name="ALIAS_MATRIX_UNITS"><![CDATA[]]></token>
+	<token name="ALIAS_VARIABLE_INDICES"><![CDATA[	0,	2,	3,	4,	5,	7,	8,	9
+]]></token>
+	<token name="ALIAS_VARIABLE_NAMES"><![CDATA[	"ControllerPan\\SteeringPan",
+	"ControllerPan\\PID_Pan\\error",
+	"ControllerPan\\PlusMinus1\\minus1",
+	"ControllerPan\\PlusMinus1\\plus1",
+	"ControllerTilt\\SteeringTilt",
+	"ControllerTilt\\PID_Tilt\\error",
+	"ControllerTilt\\PlusMinus\\minus1",
+	"ControllerTilt\\PlusMinus\\plus1"
+]]></token>
+	<token name="ALIAS_VARIABLE_NAMES2"><![CDATA[	"ControllerPan_SteeringPan",
+	"ControllerPan_PID_Pan_error",
+	"ControllerPan_PlusMinus1_minus1",
+	"ControllerPan_PlusMinus1_plus1",
+	"ControllerTilt_SteeringTilt",
+	"ControllerTilt_PID_Tilt_error",
+	"ControllerTilt_PlusMinus_minus1",
+	"ControllerTilt_PlusMinus_plus1"
+]]></token>
+	<token name="ALIAS_VARIABLE_NAMES3"><![CDATA[ControllerPan\SteeringPan
+ControllerPan\PID_Pan\error
+ControllerPan\PlusMinus1\minus1
+ControllerPan\PlusMinus1\plus1
+ControllerTilt\SteeringTilt
+ControllerTilt\PID_Tilt\error
+ControllerTilt\PlusMinus\minus1
+ControllerTilt\PlusMinus\plus1
+]]></token>
+	<token name="ALIAS_VARIABLE_UNITS"><![CDATA[]]></token>
+	<token name="COMPANY_NAME"><![CDATA[Universiteit Twente]]></token>
+	<token name="CONSTANT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="CONSTANT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="CONSTANT_NAMES3"><![CDATA[]]></token>
+	<token name="CONSTANT_UNITS"><![CDATA[]]></token>
+	<token name="CONSTANT_VALUES"><![CDATA[]]></token>
+	<token name="CONSTRAINT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="CONSTRAINT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="CONSTRAINT_NAMES3"><![CDATA[]]></token>
+	<token name="CONSTRAINT_UNITS"><![CDATA[]]></token>
+	<token name="DEPRATE_NAMES"><![CDATA[	NULL]]></token>
+	<token name="DEPRATE_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="DEPRATE_NAMES3"><![CDATA[]]></token>
+	<token name="DEPRATE_UNITS"><![CDATA[]]></token>
+	<token name="DEPSTATE_NAMES"><![CDATA[	NULL]]></token>
+	<token name="DEPSTATE_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="DEPSTATE_NAMES3"><![CDATA[]]></token>
+	<token name="DEPSTATE_UNITS"><![CDATA[]]></token>
+	<token name="DYNAMIC_EQUATIONS"><![CDATA[	/* ControllerPan\MeasuredPan = MeasuredPan; */
+	m_V[3] = m_V[12];
+
+	/* ControllerTilt\MeasuredTilt = MeasuredTilt; */
+	m_V[8] = m_V[13];
+
+	/* ControllerPan\SetPointPan = SetPointPan; */
+	m_V[4] = m_V[14];
+
+	/* ControllerTilt\SetPointTilt = SetPointTilt; */
+	m_V[9] = m_V[15];
+
+	/* ControllerPan\PlusMinus1\output = ControllerPan\SetPointPan - ControllerPan\MeasuredPan; */
+	m_V[2] = m_V[4] - m_V[3];
+
+	/* ControllerTilt\PlusMinus\output = ControllerTilt\SetPointTilt - ControllerTilt\MeasuredTilt; */
+	m_V[7] = m_V[9] - m_V[8];
+
+	/* ControllerPan\PID_Pan\pdout = ControllerPan\PID_Pan\pdstate + ((ControllerPan\PID_Pan\kp * ControllerPan\PlusMinus1\output) / ControllerPan\PID_Pan\beta); */
+	m_V[1] = m_s[0] + ((m_P[0] * m_V[2]) / m_P[2]);
+
+	/* ControllerPan\PID_Pan\pirate = ControllerPan\PID_Pan\pdout / ControllerPan\PID_Pan\tauI; */
+	m_R[1] = m_V[1] / m_P[3];
+
+	/* ControllerPan\PID_Pan\output = ControllerPan\PID_Pan\pistate + ControllerPan\PID_Pan\pdout; */
+	m_V[0] = m_s[1] + m_V[1];
+
+	/* ControllerTilt\PID_Tilt\pdout = ControllerTilt\PID_Tilt\pdstate + ((ControllerTilt\PID_Tilt\kp * ControllerTilt\PlusMinus\output) / ControllerTilt\PID_Tilt\beta); */
+	m_V[6] = m_s[2] + ((m_P[4] * m_V[7]) / m_P[6]);
+
+	/* ControllerTilt\PID_Tilt\pirate = ControllerTilt\PID_Tilt\pdout / ControllerTilt\PID_Tilt\tauI; */
+	m_R[3] = m_V[6] / m_P[7];
+
+	/* ControllerTilt\PID_Tilt\output = ControllerTilt\PID_Tilt\pistate + ControllerTilt\PID_Tilt\pdout; */
+	m_V[5] = m_s[3] + m_V[6];
+
+	/* ControllerPan\PID_Pan\pdrate = (ControllerPan\PID_Pan\kp * ControllerPan\PlusMinus1\output - ControllerPan\PID_Pan\pdout) / (ControllerPan\PID_Pan\beta * ControllerPan\PID_Pan\tauD); */
+	m_R[0] = (m_P[0] * m_V[2] - m_V[1]) / (m_P[2] * m_P[1]);
+
+	/* ControllerTilt\PID_Tilt\pdrate = (ControllerTilt\PID_Tilt\kp * ControllerTilt\PlusMinus\output - ControllerTilt\PID_Tilt\pdout) / (ControllerTilt\PID_Tilt\beta * ControllerTilt\PID_Tilt\tauD); */
+	m_R[2] = (m_P[4] * m_V[7] - m_V[6]) / (m_P[6] * m_P[5]);
+]]></token>
+	<token name="EXPERIMENT_NAME"><![CDATA[JIWY-TheoreticalModel]]></token>
+	<token name="EXPORT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="EXPORT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="EXPORT_NAMES3"><![CDATA[]]></token>
+	<token name="EXPORT_UNITS"><![CDATA[]]></token>
+	<token name="FAVORITE_PARAMETER_NAMES"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_PARAMETER_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_PARAMETER_NAMES3"><![CDATA[]]></token>
+	<token name="FAVORITE_PARAMETER_UNITS"><![CDATA[]]></token>
+	<token name="FAVORITE_PARS_EQUATIONS"><![CDATA[]]></token>
+	<token name="FAVORITE_VARIABLE_NAMES"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_VARIABLE_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_VARIABLE_NAMES3"><![CDATA[]]></token>
+	<token name="FAVORITE_VARIABLE_UNITS"><![CDATA[]]></token>
+	<token name="FAVORITE_VARS_EQUATIONS"><![CDATA[]]></token>
+	<token name="FILE_NAME"><![CDATA[]]></token>
+	<token name="FINAL_EQUATIONS"><![CDATA[]]></token>
+	<token name="FINISH_TIME"><![CDATA[8.0]]></token>
+	<token name="GENERATION_BUILD"><![CDATA[4.8.3.10415]]></token>
+	<token name="GENERATION_DATE"><![CDATA[July 1, 2021]]></token>
+	<token name="GENERATION_DIR"><![CDATA[C:\Users\bramm\Documents\Code\20-SIM\Controller]]></token>
+	<token name="GENERATION_TIME"><![CDATA[2:55:59 PM]]></token>
+	<token name="HIERARCHICAL_SUBMODEL_NAME"><![CDATA[Controller]]></token>
+	<token name="IMPORT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="IMPORT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="IMPORT_NAMES3"><![CDATA[]]></token>
+	<token name="IMPORT_UNITS"><![CDATA[]]></token>
+	<token name="INITIAL_EQUATIONS"><![CDATA[]]></token>
+	<token name="INITIAL_VALUE_NAMES"><![CDATA[	"ControllerPan\\PID_Pan\\pdstate_initial",
+	"ControllerPan\\PID_Pan\\pistate_initial",
+	"ControllerTilt\\PID_Tilt\\pdstate_initial",
+	"ControllerTilt\\PID_Tilt\\pistate_initial"
+]]></token>
+	<token name="INITIAL_VALUE_NAMES2"><![CDATA[	"ControllerPan_PID_Pan_pdstate_initial",
+	"ControllerPan_PID_Pan_pistate_initial",
+	"ControllerTilt_PID_Tilt_pdstate_initial",
+	"ControllerTilt_PID_Tilt_pistate_initial"
+]]></token>
+	<token name="INITIAL_VALUE_NAMES3"><![CDATA[ControllerPan\PID_Pan\pdstate_initial
+ControllerPan\PID_Pan\pistate_initial
+ControllerTilt\PID_Tilt\pdstate_initial
+ControllerTilt\PID_Tilt\pistate_initial
+]]></token>
+	<token name="INITIAL_VALUE_UNITS"><![CDATA[
+
+
+
+]]></token>
+	<token name="INITIAL_VALUE_VALUES"><![CDATA[0.0
+0.0
+0.0
+0.0
+]]></token>
+	<token name="INITIALIZE_ALIAS_MATRICES"><![CDATA[]]></token>
+	<token name="INITIALIZE_CONSTANTS"><![CDATA[]]></token>
+	<token name="INITIALIZE_FAVORITE_PARS"><![CDATA[]]></token>
+	<token name="INITIALIZE_FAVORITE_VARS"><![CDATA[]]></token>
+	<token name="INITIALIZE_INITIAL_VALUES"><![CDATA[	m_I[0] = 0.0;		/* ControllerPan\PID_Pan\pdstate_initial */
+	m_I[1] = 0.0;		/* ControllerPan\PID_Pan\pistate_initial */
+	m_I[2] = 0.0;		/* ControllerTilt\PID_Tilt\pdstate_initial */
+	m_I[3] = 0.0;		/* ControllerTilt\PID_Tilt\pistate_initial */
+]]></token>
+	<token name="INITIALIZE_INPUTS"><![CDATA[	u[0] = 0.0;		/* MeasuredPan */
+	u[1] = 0.0;		/* MeasuredTilt */
+	u[2] = 0.0;		/* SetPointPan */
+	u[3] = 0.0;		/* SetPointTilt */
+]]></token>
+	<token name="INITIALIZE_MATRICES"><![CDATA[]]></token>
+	<token name="INITIALIZE_OUTPUTS"><![CDATA[	y[0] = 0.0;		/* SteeringPan */
+	y[1] = 0.0;		/* SteeringTilt */
+]]></token>
+	<token name="INITIALIZE_PARAMETERS"><![CDATA[	m_P[0] = 0.3;		/* ControllerPan\PID_Pan\kp {} */
+	m_P[1] = 0.1;		/* ControllerPan\PID_Pan\tauD {s} */
+	m_P[2] = 0.1;		/* ControllerPan\PID_Pan\beta {} */
+	m_P[3] = 1000.0;		/* ControllerPan\PID_Pan\tauI {s} */
+	m_P[4] = 0.2;		/* ControllerTilt\PID_Tilt\kp {} */
+	m_P[5] = 0.2;		/* ControllerTilt\PID_Tilt\tauD {s} */
+	m_P[6] = 0.1;		/* ControllerTilt\PID_Tilt\beta {} */
+	m_P[7] = 1000.0;		/* ControllerTilt\PID_Tilt\tauI {s} */
+]]></token>
+	<token name="INITIALIZE_PARAMETERS2"><![CDATA[		0.3 /* ControllerPan\PID_Pan\kp {} */, 
+		0.1 /* ControllerPan\PID_Pan\tauD {s} */, 
+		0.1 /* ControllerPan\PID_Pan\beta {} */, 
+		1000.0 /* ControllerPan\PID_Pan\tauI {s} */, 
+		0.2 /* ControllerTilt\PID_Tilt\kp {} */, 
+		0.2 /* ControllerTilt\PID_Tilt\tauD {s} */, 
+		0.1 /* ControllerTilt\PID_Tilt\beta {} */, 
+		1000.0 /* ControllerTilt\PID_Tilt\tauI {s} */]]></token>
+	<token name="INITIALIZE_STATES"><![CDATA[	m_s[0] = m_I[0];		/* ControllerPan\PID_Pan\pdstate */
+	m_s[1] = m_I[1];		/* ControllerPan\PID_Pan\pistate */
+	m_s[2] = m_I[2];		/* ControllerTilt\PID_Tilt\pdstate */
+	m_s[3] = m_I[3];		/* ControllerTilt\PID_Tilt\pistate */
+]]></token>
+	<token name="INPUT_EQUATIONS"><![CDATA[]]></token>
+	<token name="INPUT_NAMES"><![CDATA[	"MeasuredPan",
+	"MeasuredTilt",
+	"SetPointPan",
+	"SetPointTilt"
+]]></token>
+	<token name="INPUT_NAMES2"><![CDATA[	"MeasuredPan",
+	"MeasuredTilt",
+	"SetPointPan",
+	"SetPointTilt"
+]]></token>
+	<token name="INPUT_NAMES3"><![CDATA[MeasuredPan
+MeasuredTilt
+SetPointPan
+SetPointTilt
+]]></token>
+	<token name="INPUT_TO_VARIABLE_EQUATIONS"><![CDATA[	m_V[12] = u[0];		/* MeasuredPan */
+	m_V[13] = u[1];		/* MeasuredTilt */
+	m_V[14] = u[2];		/* SetPointPan */
+	m_V[15] = u[3];		/* SetPointTilt */
+]]></token>
+	<token name="INPUT_UNITS"><![CDATA[
+
+
+
+]]></token>
+	<token name="MATRIX_NAMES"><![CDATA[	NULL
+]]></token>
+	<token name="MATRIX_NAMES2"><![CDATA[	NULL
+]]></token>
+	<token name="MATRIX_NAMES3"><![CDATA[
+]]></token>
+	<token name="MATRIX_UNITS"><![CDATA[]]></token>
+	<token name="MODEL_DESCRIPTION"><![CDATA[]]></token>
+	<token name="MODEL_FILE"><![CDATA[Controller]]></token>
+	<token name="MODEL_FUNCTION_NAME"><![CDATA[Controller]]></token>
+	<token name="MODEL_IS_DISCRETE"><![CDATA[0]]></token>
+	<token name="NUMBER_ALGLOOPS"><![CDATA[0]]></token>
+	<token name="NUMBER_ALIAS_MATRICES"><![CDATA[0]]></token>
+	<token name="NUMBER_ALIAS_VARIABLES"><![CDATA[8]]></token>
+	<token name="NUMBER_CONSTANTS"><![CDATA[0]]></token>
+	<token name="NUMBER_CONSTRAINTS"><![CDATA[0]]></token>
+	<token name="NUMBER_DEPSTATES"><![CDATA[0]]></token>
+	<token name="NUMBER_EXPORTS"><![CDATA[0]]></token>
+	<token name="NUMBER_FAVORITE_PARAMETERS"><![CDATA[0]]></token>
+	<token name="NUMBER_FAVORITE_VARIABLES"><![CDATA[0]]></token>
+	<token name="NUMBER_IMPORTS"><![CDATA[0]]></token>
+	<token name="NUMBER_INITIAL_VALUES"><![CDATA[4]]></token>
+	<token name="NUMBER_INPUTS"><![CDATA[4]]></token>
+	<token name="NUMBER_MATRICES"><![CDATA[0]]></token>
+	<token name="NUMBER_OUTPUTS"><![CDATA[2]]></token>
+	<token name="NUMBER_PARAMETERS"><![CDATA[8]]></token>
+	<token name="NUMBER_STATES"><![CDATA[4]]></token>
+	<token name="NUMBER_UNNAMED"><![CDATA[0]]></token>
+	<token name="NUMBER_VARIABLES"><![CDATA[16]]></token>
+	<token name="NUMBEROF_ABSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ADJOINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ALGEBRAICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ALGLOOPIN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ALGLOOPOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_AND"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ANTISYMMETRICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCCOSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCCOSHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCSINFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCSINHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCTANFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCTANHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ASSIGNMENT"><![CDATA[14]]></token>
+	<token name="NUMBEROF_ATAN2FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BACKDIVISION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITAND"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITCLEAR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITCMP"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITGET"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITINV"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITOR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSET"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSHIFT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSHIFTRIGHT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSWAPBYTES"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITXOR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CASESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CEILFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CODESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_COLUMNSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONDITIONAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTANT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTRAINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTRAINTIN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTRAINTOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_COSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_COSHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CROSSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DATAFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DDTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEFAULTCASESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DELAYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEPENDENTRATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEPENDENTSTATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEPENDENTSTATERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DERIVATIVEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DETFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DIAGFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETESTATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETESTATERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETETIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETETIMENODEWITHOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DIV"><![CDATA[6]]></token>
+	<token name="NUMBEROF_DIVISION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DLLDYNAMICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DLLFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DOMATLABSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EFFORTCAUSALITYSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ELEMENTDIV"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ELEMENTMUL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ELEMENTPOWER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ENERGYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EQUALSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EQUATION"><![CDATA[10]]></token>
+	<token name="NUMBEROF_EVENTDOWNFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EVENTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EVENTUPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXP10FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXP2FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDCAUSALITYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDCOLLECTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDDIRECTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDFIRSTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDMULFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDSUMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXTERNALINPUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXTERNALOUTPUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EYEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FALSE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FINALSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FINISHTIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FLOORFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FLOWCAUSALITYSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FORSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FREQUENCYEVENTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FROMMATLABSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_GAUSSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_GREATER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_GREATEREQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_HOLDFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_HOMOGENEOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_IFSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_IMPULSEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INITIALFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INITIALSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INITIALVALUE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_INNERFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INVERSEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INVERSEHOMOGENEOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_JACOBIAN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LESS"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LESSEQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LIMINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LIMITFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LINEARSOLVEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LITERAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LOG10FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LOG2FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LOGFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MAJOR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MAJORADJOINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MAXFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MIN"><![CDATA[4]]></token>
+	<token name="NUMBEROF_MINFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MODULO"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MUL"><![CDATA[6]]></token>
+	<token name="NUMBEROF_MULTIPLYHOMOGENEOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NEXTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NONLINEARFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NORMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NORMINFFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NOTEQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_OR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PARAMETER"><![CDATA[8]]></token>
+	<token name="NUMBEROF_PLUS"><![CDATA[4]]></token>
+	<token name="NUMBEROF_PORT"><![CDATA[22]]></token>
+	<token name="NUMBEROF_PORTVARIABLE"><![CDATA[22]]></token>
+	<token name="NUMBEROF_POWER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREFIXMIN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREFIXNOT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREFIXPLUS"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREVIOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RAMPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RANDOM"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RANDOMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RATE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_REALTIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_REPEATSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RESETFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RESINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RETURNSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ROUNDFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ROWSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SAMPLEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SAMPLETIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SETTOOLSETTINGFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SIGNFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SINFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SINHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SKEWFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SQRFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SQRTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STARTTIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STATE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_STATERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STEPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STEPSIZE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STOPSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SUMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SWITCHSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SYMMETRICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SYSTEMVARIABLE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TABLEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TANFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TANHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TDELAYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TILDEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIMEEVENTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIMENODEWITHOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIMETRIGGERFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TOMATLABSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRACEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRANSPOSEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRIGGERDOWNFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRIGGERFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRIGGERUPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRUE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRUNCFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TYPEPARAMETER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_UNNAMED"><![CDATA[2]]></token>
+	<token name="NUMBEROF_VARIABLE"><![CDATA[2]]></token>
+	<token name="NUMBEROF_WARNSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_WHILESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_XOR"><![CDATA[0]]></token>
+	<token name="OUTPUT_EQUATIONS"><![CDATA[	/* SteeringPan = ControllerPan\PID_Pan\output; */
+	m_V[10] = m_V[0];
+
+	/* SteeringTilt = ControllerTilt\PID_Tilt\output; */
+	m_V[11] = m_V[5];
+]]></token>
+	<token name="OUTPUT_NAMES"><![CDATA[	"SteeringPan",
+	"SteeringTilt"
+]]></token>
+	<token name="OUTPUT_NAMES2"><![CDATA[	"SteeringPan",
+	"SteeringTilt"
+]]></token>
+	<token name="OUTPUT_NAMES3"><![CDATA[SteeringPan
+SteeringTilt
+]]></token>
+	<token name="OUTPUT_UNITS"><![CDATA[
+
+]]></token>
+	<token name="PARAMETER_NAMES"><![CDATA[	"ControllerPan\\PID_Pan\\kp",
+	"ControllerPan\\PID_Pan\\tauD",
+	"ControllerPan\\PID_Pan\\beta",
+	"ControllerPan\\PID_Pan\\tauI",
+	"ControllerTilt\\PID_Tilt\\kp",
+	"ControllerTilt\\PID_Tilt\\tauD",
+	"ControllerTilt\\PID_Tilt\\beta",
+	"ControllerTilt\\PID_Tilt\\tauI"
+]]></token>
+	<token name="PARAMETER_NAMES2"><![CDATA[	"ControllerPan_PID_Pan_kp",
+	"ControllerPan_PID_Pan_tauD",
+	"ControllerPan_PID_Pan_beta",
+	"ControllerPan_PID_Pan_tauI",
+	"ControllerTilt_PID_Tilt_kp",
+	"ControllerTilt_PID_Tilt_tauD",
+	"ControllerTilt_PID_Tilt_beta",
+	"ControllerTilt_PID_Tilt_tauI"
+]]></token>
+	<token name="PARAMETER_NAMES3"><![CDATA[ControllerPan\PID_Pan\kp
+ControllerPan\PID_Pan\tauD
+ControllerPan\PID_Pan\beta
+ControllerPan\PID_Pan\tauI
+ControllerTilt\PID_Tilt\kp
+ControllerTilt\PID_Tilt\tauD
+ControllerTilt\PID_Tilt\beta
+ControllerTilt\PID_Tilt\tauI
+]]></token>
+	<token name="PARAMETER_UNITS"><![CDATA[
+s
+
+s
+
+s
+
+s
+]]></token>
+	<token name="PARAMETER_VALUES"><![CDATA[0.3
+0.1
+0.1
+1000.0
+0.2
+0.2
+0.1
+1000.0
+]]></token>
+	<token name="RATE_NAMES"><![CDATA[	"ControllerPan\\PID_Pan\\pdrate",
+	"ControllerPan\\PID_Pan\\pirate",
+	"ControllerTilt\\PID_Tilt\\pdrate",
+	"ControllerTilt\\PID_Tilt\\pirate"
+]]></token>
+	<token name="RATE_NAMES2"><![CDATA[	"ControllerPan_PID_Pan_pdrate",
+	"ControllerPan_PID_Pan_pirate",
+	"ControllerTilt_PID_Tilt_pdrate",
+	"ControllerTilt_PID_Tilt_pirate"
+]]></token>
+	<token name="RATE_NAMES3"><![CDATA[ControllerPan\PID_Pan\pdrate
+ControllerPan\PID_Pan\pirate
+ControllerTilt\PID_Tilt\pdrate
+ControllerTilt\PID_Tilt\pirate
+]]></token>
+	<token name="RATE_UNITS"><![CDATA[
+
+
+
+]]></token>
+	<token name="START_TIME"><![CDATA[0.0]]></token>
+	<token name="STATE_NAMES"><![CDATA[	"ControllerPan\\PID_Pan\\pdstate",
+	"ControllerPan\\PID_Pan\\pistate",
+	"ControllerTilt\\PID_Tilt\\pdstate",
+	"ControllerTilt\\PID_Tilt\\pistate"
+]]></token>
+	<token name="STATE_NAMES2"><![CDATA[	"ControllerPan_PID_Pan_pdstate",
+	"ControllerPan_PID_Pan_pistate",
+	"ControllerTilt_PID_Tilt_pdstate",
+	"ControllerTilt_PID_Tilt_pistate"
+]]></token>
+	<token name="STATE_NAMES3"><![CDATA[ControllerPan\PID_Pan\pdstate
+ControllerPan\PID_Pan\pistate
+ControllerTilt\PID_Tilt\pdstate
+ControllerTilt\PID_Tilt\pistate
+]]></token>
+	<token name="STATE_UNITS"><![CDATA[
+
+
+
+]]></token>
+	<token name="STATIC_EQUATIONS"><![CDATA[]]></token>
+	<token name="TIME_STEP_SIZE"><![CDATA[0.001]]></token>
+	<token name="USER_NAME"><![CDATA[20-sim 4.8 Campus License]]></token>
+	<token name="VARIABLE_NAMES"><![CDATA[	"ControllerPan\\PID_Pan\\output",
+	"ControllerPan\\PID_Pan\\pdout",
+	"ControllerPan\\PlusMinus1\\output",
+	"ControllerPan\\MeasuredPan",
+	"ControllerPan\\SetPointPan",
+	"ControllerTilt\\PID_Tilt\\output",
+	"ControllerTilt\\PID_Tilt\\pdout",
+	"ControllerTilt\\PlusMinus\\output",
+	"ControllerTilt\\MeasuredTilt",
+	"ControllerTilt\\SetPointTilt",
+	"SteeringPan",
+	"SteeringTilt",
+	"MeasuredPan",
+	"MeasuredTilt",
+	"SetPointPan",
+	"SetPointTilt"
+]]></token>
+	<token name="VARIABLE_NAMES2"><![CDATA[	"ControllerPan_PID_Pan_output",
+	"ControllerPan_PID_Pan_pdout",
+	"ControllerPan_PlusMinus1_output",
+	"ControllerPan_MeasuredPan",
+	"ControllerPan_SetPointPan",
+	"ControllerTilt_PID_Tilt_output",
+	"ControllerTilt_PID_Tilt_pdout",
+	"ControllerTilt_PlusMinus_output",
+	"ControllerTilt_MeasuredTilt",
+	"ControllerTilt_SetPointTilt",
+	"SteeringPan",
+	"SteeringTilt",
+	"MeasuredPan",
+	"MeasuredTilt",
+	"SetPointPan",
+	"SetPointTilt"
+]]></token>
+	<token name="VARIABLE_NAMES3"><![CDATA[ControllerPan\PID_Pan\output
+ControllerPan\PID_Pan\pdout
+ControllerPan\PlusMinus1\output
+ControllerPan\MeasuredPan
+ControllerPan\SetPointPan
+ControllerTilt\PID_Tilt\output
+ControllerTilt\PID_Tilt\pdout
+ControllerTilt\PlusMinus\output
+ControllerTilt\MeasuredTilt
+ControllerTilt\SetPointTilt
+SteeringPan
+SteeringTilt
+MeasuredPan
+MeasuredTilt
+SetPointPan
+SetPointTilt
+]]></token>
+	<token name="VARIABLE_TO_OUTPUT_EQUATIONS"><![CDATA[	y[0] = 	m_V[10];		/* SteeringPan */
+	y[1] = 	m_V[11];		/* SteeringTilt */
+]]></token>
+	<token name="VARIABLE_UNITS"><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></token>
+	<token name="WORK_ARRAY_SIZE"><![CDATA[0]]></token>
+	<token name="XX_ALG_IN_ARRAY_NAME"><![CDATA[A]]></token>
+	<token name="XX_ALG_OUT_ARRAY_NAME"><![CDATA[a]]></token>
+	<token name="XX_DEP_RATE_ARRAY_NAME"><![CDATA[r]]></token>
+	<token name="XX_DEP_STATE_ARRAY_NAME"><![CDATA[S]]></token>
+	<token name="XX_EXT_IN_ARRAY_NAME"><![CDATA[e]]></token>
+	<token name="XX_EXT_OUT_ARRAY_NAME"><![CDATA[E]]></token>
+	<token name="XX_FAVORITE_PARS_ARRAY_NAME"><![CDATA[F]]></token>
+	<token name="XX_FAVORITE_VARS_ARRAY_NAME"><![CDATA[f]]></token>
+	<token name="XX_INITIAL_VALUE_ARRAY_NAME"><![CDATA[I]]></token>
+	<token name="INTEGRATION_METHOD_NAME"><![CDATA[Euler]]></token>
+	<token name="VARPREFIX"><![CDATA[m_]]></token>
+	<token name="FUNCTIONPREFIX"><![CDATA[XX]]></token>
+	<token name="XX_TIME"><![CDATA[time]]></token>
+	<token name="XX_INITIALIZE"><![CDATA[initialize]]></token>
+	<token name="XX_VARIABLE_ARRAY_NAME"><![CDATA[V]]></token>
+	<token name="XX_PARAMETER_ARRAY_NAME"><![CDATA[P]]></token>
+	<token name="XX_CONSTANT_ARRAY_NAME"><![CDATA[C]]></token>
+	<token name="XX_STATE_ARRAY_NAME"><![CDATA[s]]></token>
+	<token name="XX_RATE_ARRAY_NAME"><![CDATA[R]]></token>
+	<token name="XX_MATRIX_ARRAY_NAME"><![CDATA[M]]></token>
+	<token name="XX_UNNAMED_ARRAY_NAME"><![CDATA[U]]></token>
+	<token name="EVENT_DELTA"><![CDATA[1e-006]]></token>
+	<token name="FORMAJORVERSION"><![CDATA[4]]></token>
+	<token name="FORMINORVERSION"><![CDATA[5]]></token>
+	<token name="FORMAJORBUILD"><![CDATA[0]]></token>
+	<token name="FORMINORBUILD"><![CDATA[0]]></token>
+	<token name="MAJORVERSION"><![CDATA[4]]></token>
+	<token name="MINORVERSION"><![CDATA[8]]></token>
+	<token name="MAJORBUILD"><![CDATA[3]]></token>
+	<token name="MINORBUILD"><![CDATA[10415]]></token>
+	<token name="SKIP_SIMULINK_MODEL"><![CDATA[1]]></token>
+	<token name="SKIP_SIMULINK_SUBMODEL"><![CDATA[1]]></token>
+	<token name="SKIP_MODEL_CONFIGURATION"><![CDATA[1]]></token>
+	<token name="TEMPLATENAME"><![CDATA[CppClass]]></token>
+	<token name="TEMPLATEDIR"><![CDATA[C:\Program Files (x86)\20-sim 4.8\Ccode\CppClass\.]]></token>
+	<token name="TEMPLATE_DIR"><![CDATA[C:\Program Files (x86)\20-sim 4.8\Ccode\CppClass\.]]></token>
+	<token name="TOKENNAMES"><![CDATA[MODEL_NAME
+20SIM_DIR
+SUBMODEL_NAME
+ALGLOOP_NAMES
+ALGLOOP_NAMES2
+ALGLOOP_NAMES3
+ALGLOOP_UNITS
+ALIAS_EQUATIONS
+ALIAS_MATRIX_NAMES
+ALIAS_MATRIX_NAMES2
+ALIAS_MATRIX_NAMES3
+ALIAS_MATRIX_UNITS
+ALIAS_VARIABLE_INDICES
+ALIAS_VARIABLE_NAMES
+ALIAS_VARIABLE_NAMES2
+ALIAS_VARIABLE_NAMES3
+ALIAS_VARIABLE_UNITS
+COMPANY_NAME
+CONSTANT_NAMES
+CONSTANT_NAMES2
+CONSTANT_NAMES3
+CONSTANT_UNITS
+CONSTANT_VALUES
+CONSTRAINT_NAMES
+CONSTRAINT_NAMES2
+CONSTRAINT_NAMES3
+CONSTRAINT_UNITS
+DEPRATE_NAMES
+DEPRATE_NAMES2
+DEPRATE_NAMES3
+DEPRATE_UNITS
+DEPSTATE_NAMES
+DEPSTATE_NAMES2
+DEPSTATE_NAMES3
+DEPSTATE_UNITS
+DYNAMIC_EQUATIONS
+EXPERIMENT_NAME
+EXPORT_NAMES
+EXPORT_NAMES2
+EXPORT_NAMES3
+EXPORT_UNITS
+FAVORITE_PARAMETER_NAMES
+FAVORITE_PARAMETER_NAMES2
+FAVORITE_PARAMETER_NAMES3
+FAVORITE_PARAMETER_UNITS
+FAVORITE_PARS_EQUATIONS
+FAVORITE_VARIABLE_NAMES
+FAVORITE_VARIABLE_NAMES2
+FAVORITE_VARIABLE_NAMES3
+FAVORITE_VARIABLE_UNITS
+FAVORITE_VARS_EQUATIONS
+FILE_NAME
+FINAL_EQUATIONS
+FINISH_TIME
+GENERATION_BUILD
+GENERATION_DATE
+GENERATION_DIR
+GENERATION_TIME
+HIERARCHICAL_SUBMODEL_NAME
+IMPORT_NAMES
+IMPORT_NAMES2
+IMPORT_NAMES3
+IMPORT_UNITS
+INITIAL_EQUATIONS
+INITIAL_VALUE_NAMES
+INITIAL_VALUE_NAMES2
+INITIAL_VALUE_NAMES3
+INITIAL_VALUE_UNITS
+INITIAL_VALUE_VALUES
+INITIALIZE_ALIAS_MATRICES
+INITIALIZE_CONSTANTS
+INITIALIZE_FAVORITE_PARS
+INITIALIZE_FAVORITE_VARS
+INITIALIZE_INITIAL_VALUES
+INITIALIZE_INPUTS
+INITIALIZE_MATRICES
+INITIALIZE_OUTPUTS
+INITIALIZE_PARAMETERS
+INITIALIZE_PARAMETERS2
+INITIALIZE_STATES
+INPUT_EQUATIONS
+INPUT_NAMES
+INPUT_NAMES2
+INPUT_NAMES3
+INPUT_TO_VARIABLE_EQUATIONS
+INPUT_UNITS
+MATRIX_NAMES
+MATRIX_NAMES2
+MATRIX_NAMES3
+MATRIX_UNITS
+MODEL_DESCRIPTION
+MODEL_FILE
+MODEL_FUNCTION_NAME
+MODEL_IS_DISCRETE
+NUMBER_ALGLOOPS
+NUMBER_ALIAS_MATRICES
+NUMBER_ALIAS_VARIABLES
+NUMBER_CONSTANTS
+NUMBER_CONSTRAINTS
+NUMBER_DEPSTATES
+NUMBER_EXPORTS
+NUMBER_FAVORITE_PARAMETERS
+NUMBER_FAVORITE_VARIABLES
+NUMBER_IMPORTS
+NUMBER_INITIAL_VALUES
+NUMBER_INPUTS
+NUMBER_MATRICES
+NUMBER_OUTPUTS
+NUMBER_PARAMETERS
+NUMBER_STATES
+NUMBER_UNNAMED
+NUMBER_VARIABLES
+NUMBEROF_ABSFUNCTION
+NUMBEROF_ADJOINTFUNCTION
+NUMBEROF_ALGEBRAICFUNCTION
+NUMBEROF_ALGLOOPIN
+NUMBEROF_ALGLOOPOUT
+NUMBEROF_AND
+NUMBEROF_ANTISYMMETRICFUNCTION
+NUMBEROF_ARCCOSFUNCTION
+NUMBEROF_ARCCOSHYPERBOLICFUNCTION
+NUMBEROF_ARCSINFUNCTION
+NUMBEROF_ARCSINHYPERBOLICFUNCTION
+NUMBEROF_ARCTANFUNCTION
+NUMBEROF_ARCTANHYPERBOLICFUNCTION
+NUMBEROF_ASSIGNMENT
+NUMBEROF_ATAN2FUNCTION
+NUMBEROF_BACKDIVISION
+NUMBEROF_BITAND
+NUMBEROF_BITCLEAR
+NUMBEROF_BITCMP
+NUMBEROF_BITGET
+NUMBEROF_BITINV
+NUMBEROF_BITOR
+NUMBEROF_BITSET
+NUMBEROF_BITSHIFT
+NUMBEROF_BITSHIFTRIGHT
+NUMBEROF_BITSWAPBYTES
+NUMBEROF_BITXOR
+NUMBEROF_CASESTATEMENT
+NUMBEROF_CEILFUNCTION
+NUMBEROF_CODESTATEMENT
+NUMBEROF_COLUMNSFUNCTION
+NUMBEROF_CONDITIONAL
+NUMBEROF_CONSTANT
+NUMBEROF_CONSTRAINTFUNCTION
+NUMBEROF_CONSTRAINTIN
+NUMBEROF_CONSTRAINTOUT
+NUMBEROF_COSFUNCTION
+NUMBEROF_COSHYPERBOLICFUNCTION
+NUMBEROF_CROSSFUNCTION
+NUMBEROF_DATAFUNCTION
+NUMBEROF_DDTFUNCTION
+NUMBEROF_DEFAULTCASESTATEMENT
+NUMBEROF_DELAYFUNCTION
+NUMBEROF_DEPENDENTRATE
+NUMBEROF_DEPENDENTSTATE
+NUMBEROF_DEPENDENTSTATERATE
+NUMBEROF_DERIVATIVEFUNCTION
+NUMBEROF_DETFUNCTION
+NUMBEROF_DIAGFUNCTION
+NUMBEROF_DISCRETERATE
+NUMBEROF_DISCRETESTATE
+NUMBEROF_DISCRETESTATERATE
+NUMBEROF_DISCRETETIME
+NUMBEROF_DISCRETETIMENODEWITHOUT
+NUMBEROF_DIV
+NUMBEROF_DIVISION
+NUMBEROF_DLLDYNAMICFUNCTION
+NUMBEROF_DLLFUNCTION
+NUMBEROF_DOMATLABSTATEMENT
+NUMBEROF_EFFORTCAUSALITYSTATEMENT
+NUMBEROF_ELEMENTDIV
+NUMBEROF_ELEMENTMUL
+NUMBEROF_ELEMENTPOWER
+NUMBEROF_ENERGYFUNCTION
+NUMBEROF_EQUAL
+NUMBEROF_EQUALSTATEMENT
+NUMBEROF_EQUATION
+NUMBEROF_EVENTDOWNFUNCTION
+NUMBEROF_EVENTFUNCTION
+NUMBEROF_EVENTUPFUNCTION
+NUMBEROF_EXP10FUNCTION
+NUMBEROF_EXP2FUNCTION
+NUMBEROF_EXPANDEDCAUSALITYFUNCTION
+NUMBEROF_EXPANDEDCOLLECTFUNCTION
+NUMBEROF_EXPANDEDDIRECTFUNCTION
+NUMBEROF_EXPANDEDFIRSTFUNCTION
+NUMBEROF_EXPANDEDMULFUNCTION
+NUMBEROF_EXPANDEDSUMFUNCTION
+NUMBEROF_EXPFUNCTION
+NUMBEROF_EXTERNALINPUT
+NUMBEROF_EXTERNALOUTPUT
+NUMBEROF_EYEFUNCTION
+NUMBEROF_FALSE
+NUMBEROF_FINALSTATEMENT
+NUMBEROF_FINISHTIME
+NUMBEROF_FLOORFUNCTION
+NUMBEROF_FLOWCAUSALITYSTATEMENT
+NUMBEROF_FORSTATEMENT
+NUMBEROF_FREQUENCYEVENTFUNCTION
+NUMBEROF_FROMMATLABSTATEMENT
+NUMBEROF_GAUSSFUNCTION
+NUMBEROF_GREATER
+NUMBEROF_GREATEREQUAL
+NUMBEROF_HOLDFUNCTION
+NUMBEROF_HOMOGENEOUSFUNCTION
+NUMBEROF_IFSTATEMENT
+NUMBEROF_IMPULSEFUNCTION
+NUMBEROF_INITIALFUNCTION
+NUMBEROF_INITIALSTATEMENT
+NUMBEROF_INITIALVALUE
+NUMBEROF_INNERFUNCTION
+NUMBEROF_INTFUNCTION
+NUMBEROF_INVERSEFUNCTION
+NUMBEROF_INVERSEHOMOGENEOUSFUNCTION
+NUMBEROF_JACOBIAN
+NUMBEROF_LESS
+NUMBEROF_LESSEQUAL
+NUMBEROF_LIMINTFUNCTION
+NUMBEROF_LIMITFUNCTION
+NUMBEROF_LINEARSOLVEFUNCTION
+NUMBEROF_LITERAL
+NUMBEROF_LOG10FUNCTION
+NUMBEROF_LOG2FUNCTION
+NUMBEROF_LOGFUNCTION
+NUMBEROF_MAJOR
+NUMBEROF_MAJORADJOINTFUNCTION
+NUMBEROF_MAXFUNCTION
+NUMBEROF_MIN
+NUMBEROF_MINFUNCTION
+NUMBEROF_MODULO
+NUMBEROF_MUL
+NUMBEROF_MULTIPLYHOMOGENEOUSFUNCTION
+NUMBEROF_NEXTFUNCTION
+NUMBEROF_NONLINEARFUNCTION
+NUMBEROF_NORMFUNCTION
+NUMBEROF_NORMINFFUNCTION
+NUMBEROF_NOTEQUAL
+NUMBEROF_OR
+NUMBEROF_PARAMETER
+NUMBEROF_PLUS
+NUMBEROF_PORT
+NUMBEROF_PORTVARIABLE
+NUMBEROF_POWER
+NUMBEROF_PREFIXMIN
+NUMBEROF_PREFIXNOT
+NUMBEROF_PREFIXPLUS
+NUMBEROF_PREVIOUSFUNCTION
+NUMBEROF_RAMPFUNCTION
+NUMBEROF_RANDOM
+NUMBEROF_RANDOMFUNCTION
+NUMBEROF_RATE
+NUMBEROF_REALTIME
+NUMBEROF_REPEATSTATEMENT
+NUMBEROF_RESETFUNCTION
+NUMBEROF_RESINTFUNCTION
+NUMBEROF_RETURNSTATEMENT
+NUMBEROF_ROUNDFUNCTION
+NUMBEROF_ROWSFUNCTION
+NUMBEROF_SAMPLEFUNCTION
+NUMBEROF_SAMPLETIME
+NUMBEROF_SETTOOLSETTINGFUNCTION
+NUMBEROF_SIGNFUNCTION
+NUMBEROF_SINFUNCTION
+NUMBEROF_SINHYPERBOLICFUNCTION
+NUMBEROF_SKEWFUNCTION
+NUMBEROF_SQRFUNCTION
+NUMBEROF_SQRTFUNCTION
+NUMBEROF_STARTTIME
+NUMBEROF_STATE
+NUMBEROF_STATERATE
+NUMBEROF_STEPFUNCTION
+NUMBEROF_STEPSIZE
+NUMBEROF_STOPSTATEMENT
+NUMBEROF_SUMFUNCTION
+NUMBEROF_SWITCHSTATEMENT
+NUMBEROF_SYMMETRICFUNCTION
+NUMBEROF_SYSTEMVARIABLE
+NUMBEROF_TABLEFUNCTION
+NUMBEROF_TANFUNCTION
+NUMBEROF_TANHYPERBOLICFUNCTION
+NUMBEROF_TDELAYFUNCTION
+NUMBEROF_TILDEFUNCTION
+NUMBEROF_TIME
+NUMBEROF_TIMEEVENTFUNCTION
+NUMBEROF_TIMENODEWITHOUT
+NUMBEROF_TIMETRIGGERFUNCTION
+NUMBEROF_TOMATLABSTATEMENT
+NUMBEROF_TRACEFUNCTION
+NUMBEROF_TRANSPOSEFUNCTION
+NUMBEROF_TRIGGERDOWNFUNCTION
+NUMBEROF_TRIGGERFUNCTION
+NUMBEROF_TRIGGERUPFUNCTION
+NUMBEROF_TRUE
+NUMBEROF_TRUNCFUNCTION
+NUMBEROF_TYPEPARAMETER
+NUMBEROF_UNNAMED
+NUMBEROF_VARIABLE
+NUMBEROF_WARNSTATEMENT
+NUMBEROF_WHILESTATEMENT
+NUMBEROF_XOR
+OUTPUT_EQUATIONS
+OUTPUT_NAMES
+OUTPUT_NAMES2
+OUTPUT_NAMES3
+OUTPUT_UNITS
+PARAMETER_NAMES
+PARAMETER_NAMES2
+PARAMETER_NAMES3
+PARAMETER_UNITS
+PARAMETER_VALUES
+RATE_NAMES
+RATE_NAMES2
+RATE_NAMES3
+RATE_UNITS
+START_TIME
+STATE_NAMES
+STATE_NAMES2
+STATE_NAMES3
+STATE_UNITS
+STATIC_EQUATIONS
+TIME_STEP_SIZE
+USER_NAME
+VARIABLE_NAMES
+VARIABLE_NAMES2
+VARIABLE_NAMES3
+VARIABLE_TO_OUTPUT_EQUATIONS
+VARIABLE_UNITS
+WORK_ARRAY_SIZE
+XX_ALG_IN_ARRAY_NAME
+XX_ALG_OUT_ARRAY_NAME
+XX_DEP_RATE_ARRAY_NAME
+XX_DEP_STATE_ARRAY_NAME
+XX_EXT_IN_ARRAY_NAME
+XX_EXT_OUT_ARRAY_NAME
+XX_FAVORITE_PARS_ARRAY_NAME
+XX_FAVORITE_VARS_ARRAY_NAME
+XX_INITIAL_VALUE_ARRAY_NAME
+INTEGRATION_METHOD_NAME
+VARPREFIX
+FUNCTIONPREFIX
+XX_TIME
+XX_INITIALIZE
+XX_VARIABLE_ARRAY_NAME
+XX_PARAMETER_ARRAY_NAME
+XX_CONSTANT_ARRAY_NAME
+XX_STATE_ARRAY_NAME
+XX_RATE_ARRAY_NAME
+XX_MATRIX_ARRAY_NAME
+XX_UNNAMED_ARRAY_NAME
+EVENT_DELTA
+FORMAJORVERSION
+FORMINORVERSION
+FORMAJORBUILD
+FORMINORBUILD
+MAJORVERSION
+MINORVERSION
+MAJORBUILD
+MINORBUILD
+SKIP_SIMULINK_MODEL
+SKIP_SIMULINK_SUBMODEL
+SKIP_MODEL_CONFIGURATION
+TEMPLATENAME
+TEMPLATEDIR
+TEMPLATE_DIR
+]]></token>
+</tokens>
+
+

@@ -1,0 +1,89 @@
+Plant
+=============================================================
+
+INPUTS & OUTPUTS INDICES
+------------------------
+ 
+*** INPUTS ***
+
+	m_V[22] = u[0];		/* SteeringPan */
+	m_V[23] = u[1];		/* SteeringTilt */
+
+ 
+*** OUTPUTS ***
+
+	y[0] = 	m_V[20];		/* AnglePan */
+	y[1] = 	m_V[21];		/* AngleTilt */
+
+ 
+
+
+
+
+NAMES
+-----
+
+[CONSTANTS]
+	NULL
+[PARAMETERS]
+	"Plant\\BeltPan\\r",
+	"Plant\\BeltTilt\\r",
+	"Plant\\DcamPan\\r",
+	"Plant\\DcamTilt\\r",
+	"Plant\\DmotPan\\r",
+	"Plant\\DmotTilt\\r",
+	"Plant\\GearPan\\r",
+	"Plant\\GearTilt\\r",
+	"Plant\\JcamPan\\i",
+	"Plant\\JcamTilt\\i",
+	"Plant\\JmotPan\\i",
+	"Plant\\JmotTilt\\i",
+	"Plant\\MotorPan\\r",
+	"Plant\\MotorTilt\\r"
+
+[VARIABLES]
+	"Plant\\BeltPan\\p1.e",
+	"Plant\\BeltTilt\\p1.e",
+	"Plant\\DcamPan\\p.e",
+	"Plant\\DcamTilt\\p.e",
+	"Plant\\DmotPan\\p.e",
+	"Plant\\DmotTilt\\p.e",
+	"Plant\\GearPan\\p1.e",
+	"Plant\\GearPan\\p2.f",
+	"Plant\\GearTilt\\p1.e",
+	"Plant\\GearTilt\\p2.f",
+	"Plant\\JmotPan\\p.f",
+	"Plant\\JmotTilt\\p.f",
+	"Plant\\MotorPan\\p1.e",
+	"Plant\\MotorPan\\p2.e",
+	"Plant\\MotorTilt\\p1.e",
+	"Plant\\MotorTilt\\p2.e",
+	"Plant\\OneJunction3\\p3.T",
+	"Plant\\OneJunction4\\p3.T",
+	"Plant\\SteeringPan",
+	"Plant\\SteeringTilt",
+	"AnglePan",
+	"AngleTilt",
+	"SteeringPan",
+	"SteeringTilt",
+	"Plant\\JcamPan\\state",
+	"Plant\\JcamTilt\\state",
+	"Plant\\JcamPan\\p.T_in",
+	"Plant\\JcamTilt\\p.T_in"
+
+[STATES]
+	"Plant\\JmotPan\\state",
+	"Plant\\JmotTilt\\state",
+	"Plant\\ThetaPan\\q",
+	"Plant\\ThetaTilt\\q"
+
+[RATES]
+	"Plant\\JmotPan\\p.e",
+	"Plant\\JmotTilt\\p.e",
+	"Plant\\ThetaPan\\p1.omega",
+	"Plant\\ThetaTilt\\p1.omega"
+
+[MATRICES]
+	NULL
+
+

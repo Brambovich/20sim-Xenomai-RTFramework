@@ -1,0 +1,1527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tokens>
+	<token name="MODEL_NAME"><![CDATA[Plant]]></token>
+	<token name="20SIM_DIR"><![CDATA[C:\Program Files (x86)\20-sim 4.8]]></token>
+	<token name="SUBMODEL_NAME"><![CDATA[Plant]]></token>
+	<token name="ALGLOOP_NAMES"><![CDATA[	NULL]]></token>
+	<token name="ALGLOOP_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="ALGLOOP_NAMES3"><![CDATA[]]></token>
+	<token name="ALGLOOP_UNITS"><![CDATA[]]></token>
+	<token name="ALIAS_EQUATIONS"><![CDATA[	/* Plant\OneJunction1\p4.omega = Plant\JmotPan\p.f; */
+	m_V[64] = m_V[10];
+
+	/* Plant\OneJunction2\p4.omega = Plant\JmotTilt\p.f; */
+	m_V[73] = m_V[11];
+
+	/* Plant\AnglePan = Plant\ThetaPan\q; */
+	m_V[92] = m_s[2];
+
+	/* Plant\AngleTilt = Plant\ThetaTilt\q; */
+	m_V[93] = m_s[3];
+
+	/* Plant\OneJunction1\p1.omega = Plant\JmotPan\p.f; */
+	m_V[61] = m_V[10];
+
+	/* Plant\OneJunction2\p1.omega = Plant\JmotTilt\p.f; */
+	m_V[70] = m_V[11];
+
+	/* Plant\OneJunction1\flow = Plant\JmotPan\p.f; */
+	m_V[56] = m_V[10];
+
+	/* Plant\OneJunction2\flow = Plant\JmotTilt\p.f; */
+	m_V[65] = m_V[11];
+
+	/* Plant\MotorPan\p2.f = Plant\JmotPan\p.f; */
+	m_V[53] = m_V[10];
+
+	/* Plant\MotorTilt\p2.f = Plant\JmotTilt\p.f; */
+	m_V[55] = m_V[11];
+
+	/* Plant\HbridgePan\flow = Plant\SteeringPan; */
+	m_V[44] = m_V[18];
+
+	/* Plant\HbridgeTilt\flow = Plant\SteeringTilt; */
+	m_V[48] = m_V[19];
+
+	/* Plant\OneJunction1\p2.omega = Plant\JmotPan\p.f; */
+	m_V[62] = m_V[10];
+
+	/* Plant\OneJunction1\p3.omega = Plant\JmotPan\p.f; */
+	m_V[63] = m_V[10];
+
+	/* Plant\OneJunction2\p2.omega = Plant\JmotTilt\p.f; */
+	m_V[71] = m_V[11];
+
+	/* Plant\OneJunction2\p3.omega = Plant\JmotTilt\p.f; */
+	m_V[72] = m_V[11];
+
+	/* Plant\HbridgePan\p.f = Plant\SteeringPan; */
+	m_V[43] = m_V[18];
+
+	/* Plant\HbridgeTilt\p.f = Plant\SteeringTilt; */
+	m_V[47] = m_V[19];
+
+	/* Plant\HbridgePan\p.e = Plant\MotorPan\p1.e; */
+	m_V[42] = m_V[12];
+
+	/* Plant\MotorPan\p1.f = Plant\SteeringPan; */
+	m_V[52] = m_V[18];
+
+	/* Plant\HbridgeTilt\p.e = Plant\MotorTilt\p1.e; */
+	m_V[46] = m_V[14];
+
+	/* Plant\MotorTilt\p1.f = Plant\SteeringTilt; */
+	m_V[54] = m_V[19];
+
+	/* Plant\DmotPan\p.f = Plant\JmotPan\p.f; */
+	m_V[36] = m_V[10];
+
+	/* Plant\GearPan\p1.f = Plant\JmotPan\p.f; */
+	m_V[38] = m_V[10];
+
+	/* Plant\DmotTilt\p.f = Plant\JmotTilt\p.f; */
+	m_V[37] = m_V[11];
+
+	/* Plant\GearTilt\p1.f = Plant\JmotTilt\p.f; */
+	m_V[40] = m_V[11];
+
+	/* Plant\HbridgePan\effort = Plant\MotorPan\p1.e; */
+	m_V[45] = m_V[12];
+
+	/* Plant\HbridgeTilt\effort = Plant\MotorTilt\p1.e; */
+	m_V[49] = m_V[14];
+
+	/* Plant\BeltPan\p1.f = Plant\GearPan\p2.f; */
+	m_V[28] = m_V[7];
+
+	/* Plant\BeltTilt\p1.f = Plant\GearTilt\p2.f; */
+	m_V[31] = m_V[9];
+
+	/* Plant\OneJunction1\p1.T = Plant\MotorPan\p2.e; */
+	m_V[57] = m_V[13];
+
+	/* Plant\OneJunction2\p1.T = Plant\MotorTilt\p2.e; */
+	m_V[66] = m_V[15];
+
+	/* Plant\OneJunction1\p2.T = Plant\DmotPan\p.e; */
+	m_V[58] = m_V[4];
+
+	/* Plant\OneJunction2\p2.T = Plant\DmotTilt\p.e; */
+	m_V[67] = m_V[5];
+
+	/* Plant\BeltPan\p2.omega = Plant\ThetaPan\p1.omega; */
+	m_V[30] = m_R[2];
+
+	/* Plant\BeltTilt\p2.omega = Plant\ThetaTilt\p1.omega; */
+	m_V[33] = m_R[3];
+
+	/* Plant\ThetaPan\p2.omega = Plant\ThetaPan\p1.omega; */
+	m_V[88] = m_R[2];
+
+	/* Plant\ThetaTilt\p2.omega = Plant\ThetaTilt\p1.omega; */
+	m_V[91] = m_R[3];
+
+	/* Plant\OneJunction3\p3.omega = Plant\ThetaPan\p1.omega; */
+	m_V[79] = m_R[2];
+
+	/* Plant\OneJunction4\p3.omega = Plant\ThetaTilt\p1.omega; */
+	m_V[85] = m_R[3];
+
+	/* Plant\OneJunction3\p1.omega = Plant\ThetaPan\p1.omega; */
+	m_V[77] = m_R[2];
+
+	/* Plant\OneJunction4\p1.omega = Plant\ThetaTilt\p1.omega; */
+	m_V[83] = m_R[3];
+
+	/* Plant\OneJunction3\flow = Plant\ThetaPan\p1.omega; */
+	m_V[74] = m_R[2];
+
+	/* Plant\OneJunction4\flow = Plant\ThetaTilt\p1.omega; */
+	m_V[80] = m_R[3];
+
+	/* Plant\DcamPan\p.f = Plant\ThetaPan\p1.omega; */
+	m_V[34] = m_R[2];
+
+	/* Plant\DcamTilt\p.f = Plant\ThetaTilt\p1.omega; */
+	m_V[35] = m_R[3];
+
+	/* Plant\OneJunction3\p2.omega = Plant\ThetaPan\p1.omega; */
+	m_V[78] = m_R[2];
+
+	/* Plant\OneJunction4\p2.omega = Plant\ThetaTilt\p1.omega; */
+	m_V[84] = m_R[3];
+
+	/* Plant\OneJunction3\p1.T = Plant\DcamPan\p.e; */
+	m_V[75] = m_V[2];
+
+	/* Plant\JcamPan\p.omega = Plant\ThetaPan\p1.omega; */
+	m_V[50] = m_R[2];
+
+	/* Plant\OneJunction4\p1.T = Plant\DcamTilt\p.e; */
+	m_V[81] = m_V[3];
+
+	/* Plant\JcamTilt\p.omega = Plant\ThetaTilt\p1.omega; */
+	m_V[51] = m_R[3];
+
+	/* Plant\OneJunction3\p2.T = Plant\JcamPan\p.T_in; */
+	m_V[76] = m_V[26];
+
+	/* Plant\OneJunction4\p2.T = Plant\JcamTilt\p.T_in; */
+	m_V[82] = m_V[27];
+
+	/* Plant\ThetaPan\p2.T = Plant\OneJunction3\p3.T; */
+	m_V[87] = m_V[16];
+
+	/* Plant\ThetaTilt\p2.T = Plant\OneJunction4\p3.T; */
+	m_V[90] = m_V[17];
+
+	/* Plant\ThetaPan\p1.T = Plant\OneJunction3\p3.T; */
+	m_V[86] = m_V[16];
+
+	/* Plant\ThetaTilt\p1.T = Plant\OneJunction4\p3.T; */
+	m_V[89] = m_V[17];
+
+	/* Plant\BeltPan\p2.T = Plant\OneJunction3\p3.T; */
+	m_V[29] = m_V[16];
+
+	/* Plant\BeltTilt\p2.T = Plant\OneJunction4\p3.T; */
+	m_V[32] = m_V[17];
+
+	/* Plant\GearPan\p2.e = Plant\BeltPan\p1.e; */
+	m_V[39] = m_V[0];
+
+	/* Plant\GearTilt\p2.e = Plant\BeltTilt\p1.e; */
+	m_V[41] = m_V[1];
+
+	/* Plant\OneJunction1\p3.T = Plant\GearPan\p1.e; */
+	m_V[59] = m_V[6];
+
+	/* Plant\OneJunction2\p3.T = Plant\GearTilt\p1.e; */
+	m_V[68] = m_V[8];
+
+	/* Plant\OneJunction1\p4.T = Plant\JmotPan\p.e; */
+	m_V[60] = m_R[0];
+
+	/* Plant\OneJunction2\p4.T = Plant\JmotTilt\p.e; */
+	m_V[69] = m_R[1];
+]]></token>
+	<token name="ALIAS_MATRIX_NAMES"><![CDATA[	NULL
+]]></token>
+	<token name="ALIAS_MATRIX_NAMES2"><![CDATA[	NULL
+]]></token>
+	<token name="ALIAS_MATRIX_NAMES3"><![CDATA[
+]]></token>
+	<token name="ALIAS_MATRIX_UNITS"><![CDATA[]]></token>
+	<token name="ALIAS_VARIABLE_INDICES"><![CDATA[	0,	0,	1,	1,	2,	2,	2,	2,	2,	2,	2,
+	2,	2,	2,	3,	3,	3,	3,	3,	3,	3,	3,
+	3,	3,	4,	5,	6,	7,	8,	9,	10,	10,	10,
+	10,	10,	10,	10,	10,	11,	11,	11,	11,	11,	11,
+	11,	11,	12,	12,	13,	14,	14,	15,	16,	16,	16,
+	17,	17,	17,	18,	18,	18,	19,	19,	19,	26,	27
+]]></token>
+	<token name="ALIAS_VARIABLE_NAMES"><![CDATA[	"Plant\\OneJunction1\\p4.T",
+	"Plant\\GearPan\\p2.e",
+	"Plant\\OneJunction2\\p4.T",
+	"Plant\\GearTilt\\p2.e",
+	"Plant\\AnglePan",
+	"Plant\\BeltPan\\p2.omega",
+	"Plant\\OneJunction3\\flow",
+	"Plant\\ThetaPan\\p2.omega",
+	"Plant\\DcamPan\\p.f",
+	"Plant\\OneJunction3\\p1.omega",
+	"Plant\\OneJunction3\\p1.T",
+	"Plant\\OneJunction3\\p2.omega",
+	"Plant\\JcamPan\\p.omega",
+	"Plant\\OneJunction3\\p3.omega",
+	"Plant\\DcamTilt\\p.f",
+	"Plant\\ThetaTilt\\p2.omega",
+	"Plant\\AngleTilt",
+	"Plant\\OneJunction4\\p3.omega",
+	"Plant\\BeltTilt\\p2.omega",
+	"Plant\\OneJunction4\\p2.omega",
+	"Plant\\OneJunction4\\p1.T",
+	"Plant\\OneJunction4\\p1.omega",
+	"Plant\\OneJunction4\\flow",
+	"Plant\\JcamTilt\\p.omega",
+	"Plant\\OneJunction1\\p2.T",
+	"Plant\\OneJunction2\\p2.T",
+	"Plant\\OneJunction1\\p3.T",
+	"Plant\\BeltPan\\p1.f",
+	"Plant\\OneJunction2\\p3.T",
+	"Plant\\BeltTilt\\p1.f",
+	"Plant\\GearPan\\p1.f",
+	"Plant\\OneJunction1\\flow",
+	"Plant\\OneJunction1\\p1.omega",
+	"Plant\\OneJunction1\\p2.omega",
+	"Plant\\MotorPan\\p2.f",
+	"Plant\\OneJunction1\\p3.omega",
+	"Plant\\OneJunction1\\p4.omega",
+	"Plant\\DmotPan\\p.f",
+	"Plant\\MotorTilt\\p2.f",
+	"Plant\\DmotTilt\\p.f",
+	"Plant\\OneJunction2\\flow",
+	"Plant\\OneJunction2\\p1.omega",
+	"Plant\\OneJunction2\\p2.omega",
+	"Plant\\GearTilt\\p1.f",
+	"Plant\\OneJunction2\\p3.omega",
+	"Plant\\OneJunction2\\p4.omega",
+	"Plant\\HbridgePan\\p.e",
+	"Plant\\HbridgePan\\effort",
+	"Plant\\OneJunction1\\p1.T",
+	"Plant\\HbridgeTilt\\effort",
+	"Plant\\HbridgeTilt\\p.e",
+	"Plant\\OneJunction2\\p1.T",
+	"Plant\\BeltPan\\p2.T",
+	"Plant\\ThetaPan\\p2.T",
+	"Plant\\ThetaPan\\p1.T",
+	"Plant\\ThetaTilt\\p2.T",
+	"Plant\\ThetaTilt\\p1.T",
+	"Plant\\BeltTilt\\p2.T",
+	"Plant\\HbridgePan\\p.f",
+	"Plant\\HbridgePan\\flow",
+	"Plant\\MotorPan\\p1.f",
+	"Plant\\HbridgeTilt\\p.f",
+	"Plant\\HbridgeTilt\\flow",
+	"Plant\\MotorTilt\\p1.f",
+	"Plant\\OneJunction3\\p2.T",
+	"Plant\\OneJunction4\\p2.T"
+]]></token>
+	<token name="ALIAS_VARIABLE_NAMES2"><![CDATA[	"Plant_OneJunction1_p4.T",
+	"Plant_GearPan_p2.e",
+	"Plant_OneJunction2_p4.T",
+	"Plant_GearTilt_p2.e",
+	"Plant_AnglePan",
+	"Plant_BeltPan_p2.omega",
+	"Plant_OneJunction3_flow",
+	"Plant_ThetaPan_p2.omega",
+	"Plant_DcamPan_p.f",
+	"Plant_OneJunction3_p1.omega",
+	"Plant_OneJunction3_p1.T",
+	"Plant_OneJunction3_p2.omega",
+	"Plant_JcamPan_p.omega",
+	"Plant_OneJunction3_p3.omega",
+	"Plant_DcamTilt_p.f",
+	"Plant_ThetaTilt_p2.omega",
+	"Plant_AngleTilt",
+	"Plant_OneJunction4_p3.omega",
+	"Plant_BeltTilt_p2.omega",
+	"Plant_OneJunction4_p2.omega",
+	"Plant_OneJunction4_p1.T",
+	"Plant_OneJunction4_p1.omega",
+	"Plant_OneJunction4_flow",
+	"Plant_JcamTilt_p.omega",
+	"Plant_OneJunction1_p2.T",
+	"Plant_OneJunction2_p2.T",
+	"Plant_OneJunction1_p3.T",
+	"Plant_BeltPan_p1.f",
+	"Plant_OneJunction2_p3.T",
+	"Plant_BeltTilt_p1.f",
+	"Plant_GearPan_p1.f",
+	"Plant_OneJunction1_flow",
+	"Plant_OneJunction1_p1.omega",
+	"Plant_OneJunction1_p2.omega",
+	"Plant_MotorPan_p2.f",
+	"Plant_OneJunction1_p3.omega",
+	"Plant_OneJunction1_p4.omega",
+	"Plant_DmotPan_p.f",
+	"Plant_MotorTilt_p2.f",
+	"Plant_DmotTilt_p.f",
+	"Plant_OneJunction2_flow",
+	"Plant_OneJunction2_p1.omega",
+	"Plant_OneJunction2_p2.omega",
+	"Plant_GearTilt_p1.f",
+	"Plant_OneJunction2_p3.omega",
+	"Plant_OneJunction2_p4.omega",
+	"Plant_HbridgePan_p.e",
+	"Plant_HbridgePan_effort",
+	"Plant_OneJunction1_p1.T",
+	"Plant_HbridgeTilt_effort",
+	"Plant_HbridgeTilt_p.e",
+	"Plant_OneJunction2_p1.T",
+	"Plant_BeltPan_p2.T",
+	"Plant_ThetaPan_p2.T",
+	"Plant_ThetaPan_p1.T",
+	"Plant_ThetaTilt_p2.T",
+	"Plant_ThetaTilt_p1.T",
+	"Plant_BeltTilt_p2.T",
+	"Plant_HbridgePan_p.f",
+	"Plant_HbridgePan_flow",
+	"Plant_MotorPan_p1.f",
+	"Plant_HbridgeTilt_p.f",
+	"Plant_HbridgeTilt_flow",
+	"Plant_MotorTilt_p1.f",
+	"Plant_OneJunction3_p2.T",
+	"Plant_OneJunction4_p2.T"
+]]></token>
+	<token name="ALIAS_VARIABLE_NAMES3"><![CDATA[Plant\OneJunction1\p4.T
+Plant\GearPan\p2.e
+Plant\OneJunction2\p4.T
+Plant\GearTilt\p2.e
+Plant\AnglePan
+Plant\BeltPan\p2.omega
+Plant\OneJunction3\flow
+Plant\ThetaPan\p2.omega
+Plant\DcamPan\p.f
+Plant\OneJunction3\p1.omega
+Plant\OneJunction3\p1.T
+Plant\OneJunction3\p2.omega
+Plant\JcamPan\p.omega
+Plant\OneJunction3\p3.omega
+Plant\DcamTilt\p.f
+Plant\ThetaTilt\p2.omega
+Plant\AngleTilt
+Plant\OneJunction4\p3.omega
+Plant\BeltTilt\p2.omega
+Plant\OneJunction4\p2.omega
+Plant\OneJunction4\p1.T
+Plant\OneJunction4\p1.omega
+Plant\OneJunction4\flow
+Plant\JcamTilt\p.omega
+Plant\OneJunction1\p2.T
+Plant\OneJunction2\p2.T
+Plant\OneJunction1\p3.T
+Plant\BeltPan\p1.f
+Plant\OneJunction2\p3.T
+Plant\BeltTilt\p1.f
+Plant\GearPan\p1.f
+Plant\OneJunction1\flow
+Plant\OneJunction1\p1.omega
+Plant\OneJunction1\p2.omega
+Plant\MotorPan\p2.f
+Plant\OneJunction1\p3.omega
+Plant\OneJunction1\p4.omega
+Plant\DmotPan\p.f
+Plant\MotorTilt\p2.f
+Plant\DmotTilt\p.f
+Plant\OneJunction2\flow
+Plant\OneJunction2\p1.omega
+Plant\OneJunction2\p2.omega
+Plant\GearTilt\p1.f
+Plant\OneJunction2\p3.omega
+Plant\OneJunction2\p4.omega
+Plant\HbridgePan\p.e
+Plant\HbridgePan\effort
+Plant\OneJunction1\p1.T
+Plant\HbridgeTilt\effort
+Plant\HbridgeTilt\p.e
+Plant\OneJunction2\p1.T
+Plant\BeltPan\p2.T
+Plant\ThetaPan\p2.T
+Plant\ThetaPan\p1.T
+Plant\ThetaTilt\p2.T
+Plant\ThetaTilt\p1.T
+Plant\BeltTilt\p2.T
+Plant\HbridgePan\p.f
+Plant\HbridgePan\flow
+Plant\MotorPan\p1.f
+Plant\HbridgeTilt\p.f
+Plant\HbridgeTilt\flow
+Plant\MotorTilt\p1.f
+Plant\OneJunction3\p2.T
+Plant\OneJunction4\p2.T
+]]></token>
+	<token name="ALIAS_VARIABLE_UNITS"><![CDATA[]]></token>
+	<token name="COMPANY_NAME"><![CDATA[Universiteit Twente]]></token>
+	<token name="CONSTANT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="CONSTANT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="CONSTANT_NAMES3"><![CDATA[]]></token>
+	<token name="CONSTANT_UNITS"><![CDATA[]]></token>
+	<token name="CONSTANT_VALUES"><![CDATA[]]></token>
+	<token name="CONSTRAINT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="CONSTRAINT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="CONSTRAINT_NAMES3"><![CDATA[]]></token>
+	<token name="CONSTRAINT_UNITS"><![CDATA[]]></token>
+	<token name="DEPRATE_NAMES"><![CDATA[	NULL]]></token>
+	<token name="DEPRATE_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="DEPRATE_NAMES3"><![CDATA[]]></token>
+	<token name="DEPRATE_UNITS"><![CDATA[]]></token>
+	<token name="DEPSTATE_NAMES"><![CDATA[	NULL]]></token>
+	<token name="DEPSTATE_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="DEPSTATE_NAMES3"><![CDATA[]]></token>
+	<token name="DEPSTATE_UNITS"><![CDATA[]]></token>
+	<token name="DYNAMIC_EQUATIONS"><![CDATA[	/* Plant\JmotPan\p.f = Plant\JmotPan\state / Plant\JmotPan\i; */
+	m_V[10] = m_s[0] / m_P[10];
+
+	/* Plant\JmotTilt\p.f = Plant\JmotTilt\state / Plant\JmotTilt\i; */
+	m_V[11] = m_s[1] / m_P[11];
+
+	/* AnglePan = Plant\ThetaPan\q; */
+	m_V[20] = m_s[2];
+
+	/* AngleTilt = Plant\ThetaTilt\q; */
+	m_V[21] = m_s[3];
+
+	/* Plant\SteeringPan = SteeringPan; */
+	m_V[18] = m_V[22];
+
+	/* Plant\SteeringTilt = SteeringTilt; */
+	m_V[19] = m_V[23];
+
+	/* Plant\MotorPan\p1.e = Plant\MotorPan\r * Plant\JmotPan\p.f; */
+	m_V[12] = m_P[12] * m_V[10];
+
+	/* Plant\MotorTilt\p1.e = Plant\MotorTilt\r * Plant\JmotTilt\p.f; */
+	m_V[14] = m_P[13] * m_V[11];
+
+	/* Plant\DmotPan\p.e = Plant\DmotPan\r * Plant\JmotPan\p.f; */
+	m_V[4] = m_P[4] * m_V[10];
+
+	/* Plant\DmotTilt\p.e = Plant\DmotTilt\r * Plant\JmotTilt\p.f; */
+	m_V[5] = m_P[5] * m_V[11];
+
+	/* Plant\GearPan\p2.f = Plant\GearPan\r * Plant\JmotPan\p.f; */
+	m_V[7] = m_P[6] * m_V[10];
+
+	/* Plant\GearTilt\p2.f = Plant\GearTilt\r * Plant\JmotTilt\p.f; */
+	m_V[9] = m_P[7] * m_V[11];
+
+	/* Plant\MotorPan\p2.e = Plant\MotorPan\r * Plant\SteeringPan; */
+	m_V[13] = m_P[12] * m_V[18];
+
+	/* Plant\MotorTilt\p2.e = Plant\MotorTilt\r * Plant\SteeringTilt; */
+	m_V[15] = m_P[13] * m_V[19];
+
+	/* Plant\ThetaPan\p1.omega = Plant\BeltPan\r * Plant\GearPan\p2.f; */
+	m_R[2] = m_P[0] * m_V[7];
+
+	/* Plant\ThetaTilt\p1.omega = Plant\BeltTilt\r * Plant\GearTilt\p2.f; */
+	m_R[3] = m_P[1] * m_V[9];
+
+	/* Plant\DcamPan\p.e = Plant\DcamPan\r * Plant\ThetaPan\p1.omega; */
+	m_V[2] = m_P[2] * m_R[2];
+
+	/* Plant\DcamTilt\p.e = Plant\DcamTilt\r * Plant\ThetaTilt\p1.omega; */
+	m_V[3] = m_P[3] * m_R[3];
+
+	/* Plant\JcamPan\p.T_in = ((Plant\BeltPan\r * (Plant\GearPan\r * (((Plant\MotorPan\p2.e - Plant\DmotPan\p.e) - Plant\GearPan\r * (Plant\BeltPan\r * Plant\DcamPan\p.e)) / Plant\JmotPan\i))) * Plant\JcamPan\i) / (1.0 + (Plant\BeltPan\r * (Plant\GearPan\r * ((Plant\GearPan\r * Plant\BeltPan\r) / Plant\JmotPan\i))) * Plant\JcamPan\i); */
+	m_V[26] = ((m_P[0] * (m_P[6] * (((m_V[13] - m_V[4]) - m_P[6] * (m_P[0] * m_V[2])) / m_P[10]))) * m_P[8]) / (1.0 + (m_P[0] * (m_P[6] * ((m_P[6] * m_P[0]) / m_P[10]))) * m_P[8]);
+
+	/* Plant\JcamTilt\p.T_in = ((Plant\BeltTilt\r * (Plant\GearTilt\r * (((Plant\MotorTilt\p2.e - Plant\DmotTilt\p.e) - Plant\GearTilt\r * (Plant\BeltTilt\r * Plant\DcamTilt\p.e)) / Plant\JmotTilt\i))) * Plant\JcamTilt\i) / (1.0 + (Plant\BeltTilt\r * (Plant\GearTilt\r * ((Plant\GearTilt\r * Plant\BeltTilt\r) / Plant\JmotTilt\i))) * Plant\JcamTilt\i); */
+	m_V[27] = ((m_P[1] * (m_P[7] * (((m_V[15] - m_V[5]) - m_P[7] * (m_P[1] * m_V[3])) / m_P[11]))) * m_P[9]) / (1.0 + (m_P[1] * (m_P[7] * ((m_P[7] * m_P[1]) / m_P[11]))) * m_P[9]);
+
+	/* Plant\JcamPan\state = Plant\ThetaPan\p1.omega * Plant\JcamPan\i; */
+	m_V[24] = m_R[2] * m_P[8];
+
+	/* Plant\JcamTilt\state = Plant\ThetaTilt\p1.omega * Plant\JcamTilt\i; */
+	m_V[25] = m_R[3] * m_P[9];
+
+	/* Plant\OneJunction3\p3.T = Plant\DcamPan\p.e + Plant\JcamPan\p.T_in; */
+	m_V[16] = m_V[2] + m_V[26];
+
+	/* Plant\OneJunction4\p3.T = Plant\DcamTilt\p.e + Plant\JcamTilt\p.T_in; */
+	m_V[17] = m_V[3] + m_V[27];
+
+	/* Plant\BeltPan\p1.e = Plant\BeltPan\r * Plant\OneJunction3\p3.T; */
+	m_V[0] = m_P[0] * m_V[16];
+
+	/* Plant\BeltTilt\p1.e = Plant\BeltTilt\r * Plant\OneJunction4\p3.T; */
+	m_V[1] = m_P[1] * m_V[17];
+
+	/* Plant\GearPan\p1.e = Plant\GearPan\r * Plant\BeltPan\p1.e; */
+	m_V[6] = m_P[6] * m_V[0];
+
+	/* Plant\GearTilt\p1.e = Plant\GearTilt\r * Plant\BeltTilt\p1.e; */
+	m_V[8] = m_P[7] * m_V[1];
+
+	/* Plant\JmotPan\p.e = (Plant\MotorPan\p2.e - Plant\DmotPan\p.e) - Plant\GearPan\p1.e; */
+	m_R[0] = (m_V[13] - m_V[4]) - m_V[6];
+
+	/* Plant\JmotTilt\p.e = (Plant\MotorTilt\p2.e - Plant\DmotTilt\p.e) - Plant\GearTilt\p1.e; */
+	m_R[1] = (m_V[15] - m_V[5]) - m_V[8];
+]]></token>
+	<token name="EXPERIMENT_NAME"><![CDATA[JIWY-TheoreticalModel]]></token>
+	<token name="EXPORT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="EXPORT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="EXPORT_NAMES3"><![CDATA[]]></token>
+	<token name="EXPORT_UNITS"><![CDATA[]]></token>
+	<token name="FAVORITE_PARAMETER_NAMES"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_PARAMETER_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_PARAMETER_NAMES3"><![CDATA[]]></token>
+	<token name="FAVORITE_PARAMETER_UNITS"><![CDATA[]]></token>
+	<token name="FAVORITE_PARS_EQUATIONS"><![CDATA[]]></token>
+	<token name="FAVORITE_VARIABLE_NAMES"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_VARIABLE_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="FAVORITE_VARIABLE_NAMES3"><![CDATA[]]></token>
+	<token name="FAVORITE_VARIABLE_UNITS"><![CDATA[]]></token>
+	<token name="FAVORITE_VARS_EQUATIONS"><![CDATA[]]></token>
+	<token name="FILE_NAME"><![CDATA[]]></token>
+	<token name="FINAL_EQUATIONS"><![CDATA[]]></token>
+	<token name="FINISH_TIME"><![CDATA[8.0]]></token>
+	<token name="GENERATION_BUILD"><![CDATA[4.8.3.10415]]></token>
+	<token name="GENERATION_DATE"><![CDATA[July 1, 2021]]></token>
+	<token name="GENERATION_DIR"><![CDATA[C:\Users\bramm\Documents\Code\20-SIM\Plant]]></token>
+	<token name="GENERATION_TIME"><![CDATA[2:56:11 PM]]></token>
+	<token name="HIERARCHICAL_SUBMODEL_NAME"><![CDATA[Plant]]></token>
+	<token name="IMPORT_NAMES"><![CDATA[	NULL]]></token>
+	<token name="IMPORT_NAMES2"><![CDATA[	NULL]]></token>
+	<token name="IMPORT_NAMES3"><![CDATA[]]></token>
+	<token name="IMPORT_UNITS"><![CDATA[]]></token>
+	<token name="INITIAL_EQUATIONS"><![CDATA[]]></token>
+	<token name="INITIAL_VALUE_NAMES"><![CDATA[	"Plant\\JmotPan\\state_initial",
+	"Plant\\JmotTilt\\state_initial",
+	"Plant\\ThetaPan\\q_initial",
+	"Plant\\ThetaTilt\\q_initial"
+]]></token>
+	<token name="INITIAL_VALUE_NAMES2"><![CDATA[	"Plant_JmotPan_state_initial",
+	"Plant_JmotTilt_state_initial",
+	"Plant_ThetaPan_q_initial",
+	"Plant_ThetaTilt_q_initial"
+]]></token>
+	<token name="INITIAL_VALUE_NAMES3"><![CDATA[Plant\JmotPan\state_initial
+Plant\JmotTilt\state_initial
+Plant\ThetaPan\q_initial
+Plant\ThetaTilt\q_initial
+]]></token>
+	<token name="INITIAL_VALUE_UNITS"><![CDATA[
+
+rad
+rad
+]]></token>
+	<token name="INITIAL_VALUE_VALUES"><![CDATA[0.0
+0.0
+0.0
+0.0
+]]></token>
+	<token name="INITIALIZE_ALIAS_MATRICES"><![CDATA[]]></token>
+	<token name="INITIALIZE_CONSTANTS"><![CDATA[]]></token>
+	<token name="INITIALIZE_FAVORITE_PARS"><![CDATA[]]></token>
+	<token name="INITIALIZE_FAVORITE_VARS"><![CDATA[]]></token>
+	<token name="INITIALIZE_INITIAL_VALUES"><![CDATA[	m_I[0] = 0.0;		/* Plant\JmotPan\state_initial */
+	m_I[1] = 0.0;		/* Plant\JmotTilt\state_initial */
+	m_I[2] = 0.0;		/* Plant\ThetaPan\q_initial {rad} */
+	m_I[3] = 0.0;		/* Plant\ThetaTilt\q_initial {rad} */
+]]></token>
+	<token name="INITIALIZE_INPUTS"><![CDATA[	u[0] = 0.0;		/* SteeringPan */
+	u[1] = 0.0;		/* SteeringTilt */
+]]></token>
+	<token name="INITIALIZE_MATRICES"><![CDATA[]]></token>
+	<token name="INITIALIZE_OUTPUTS"><![CDATA[	y[0] = 0.0;		/* AnglePan */
+	y[1] = 0.0;		/* AngleTilt */
+]]></token>
+	<token name="INITIALIZE_PARAMETERS"><![CDATA[	m_P[0] = 1.0;		/* Plant\BeltPan\r */
+	m_P[1] = 0.25;		/* Plant\BeltTilt\r */
+	m_P[2] = 2.0e-4;		/* Plant\DcamPan\r */
+	m_P[3] = 1.0e-4;		/* Plant\DcamTilt\r */
+	m_P[4] = 1.77e-6;		/* Plant\DmotPan\r */
+	m_P[5] = 4.0e-7;		/* Plant\DmotTilt\r */
+	m_P[6] = 0.05263157894736842;		/* Plant\GearPan\r */
+	m_P[7] = 0.05263157894736842;		/* Plant\GearTilt\r */
+	m_P[8] = 3.0e-4;		/* Plant\JcamPan\i */
+	m_P[9] = 4.5e-5;		/* Plant\JcamTilt\i */
+	m_P[10] = 2.06e-7;		/* Plant\JmotPan\i */
+	m_P[11] = 5.28e-8;		/* Plant\JmotTilt\i */
+	m_P[12] = 0.018;		/* Plant\MotorPan\r */
+	m_P[13] = 0.00701;		/* Plant\MotorTilt\r */
+]]></token>
+	<token name="INITIALIZE_PARAMETERS2"><![CDATA[		1.0 /* Plant\BeltPan\r */, 
+		0.25 /* Plant\BeltTilt\r */, 
+		2.0e-4 /* Plant\DcamPan\r */, 
+		1.0e-4 /* Plant\DcamTilt\r */, 
+		1.77e-6 /* Plant\DmotPan\r */, 
+		4.0e-7 /* Plant\DmotTilt\r */, 
+		0.05263157894736842 /* Plant\GearPan\r */, 
+		0.05263157894736842 /* Plant\GearTilt\r */, 
+		3.0e-4 /* Plant\JcamPan\i */, 
+		4.5e-5 /* Plant\JcamTilt\i */, 
+		2.06e-7 /* Plant\JmotPan\i */, 
+		5.28e-8 /* Plant\JmotTilt\i */, 
+		0.018 /* Plant\MotorPan\r */, 
+		0.00701 /* Plant\MotorTilt\r */]]></token>
+	<token name="INITIALIZE_STATES"><![CDATA[	m_s[0] = m_I[0];		/* Plant\JmotPan\state */
+	m_s[1] = m_I[1];		/* Plant\JmotTilt\state */
+	m_s[2] = m_I[2];		/* Plant\ThetaPan\q {rad} */
+	m_s[3] = m_I[3];		/* Plant\ThetaTilt\q {rad} */
+]]></token>
+	<token name="INPUT_EQUATIONS"><![CDATA[]]></token>
+	<token name="INPUT_NAMES"><![CDATA[	"SteeringPan",
+	"SteeringTilt"
+]]></token>
+	<token name="INPUT_NAMES2"><![CDATA[	"SteeringPan",
+	"SteeringTilt"
+]]></token>
+	<token name="INPUT_NAMES3"><![CDATA[SteeringPan
+SteeringTilt
+]]></token>
+	<token name="INPUT_TO_VARIABLE_EQUATIONS"><![CDATA[	m_V[22] = u[0];		/* SteeringPan */
+	m_V[23] = u[1];		/* SteeringTilt */
+]]></token>
+	<token name="INPUT_UNITS"><![CDATA[
+
+]]></token>
+	<token name="MATRIX_NAMES"><![CDATA[	NULL
+]]></token>
+	<token name="MATRIX_NAMES2"><![CDATA[	NULL
+]]></token>
+	<token name="MATRIX_NAMES3"><![CDATA[
+]]></token>
+	<token name="MATRIX_UNITS"><![CDATA[]]></token>
+	<token name="MODEL_DESCRIPTION"><![CDATA[]]></token>
+	<token name="MODEL_FILE"><![CDATA[Plant]]></token>
+	<token name="MODEL_FUNCTION_NAME"><![CDATA[Plant]]></token>
+	<token name="MODEL_IS_DISCRETE"><![CDATA[0]]></token>
+	<token name="NUMBER_ALGLOOPS"><![CDATA[0]]></token>
+	<token name="NUMBER_ALIAS_MATRICES"><![CDATA[0]]></token>
+	<token name="NUMBER_ALIAS_VARIABLES"><![CDATA[66]]></token>
+	<token name="NUMBER_CONSTANTS"><![CDATA[0]]></token>
+	<token name="NUMBER_CONSTRAINTS"><![CDATA[0]]></token>
+	<token name="NUMBER_DEPSTATES"><![CDATA[0]]></token>
+	<token name="NUMBER_EXPORTS"><![CDATA[0]]></token>
+	<token name="NUMBER_FAVORITE_PARAMETERS"><![CDATA[0]]></token>
+	<token name="NUMBER_FAVORITE_VARIABLES"><![CDATA[0]]></token>
+	<token name="NUMBER_IMPORTS"><![CDATA[0]]></token>
+	<token name="NUMBER_INITIAL_VALUES"><![CDATA[4]]></token>
+	<token name="NUMBER_INPUTS"><![CDATA[2]]></token>
+	<token name="NUMBER_MATRICES"><![CDATA[0]]></token>
+	<token name="NUMBER_OUTPUTS"><![CDATA[2]]></token>
+	<token name="NUMBER_PARAMETERS"><![CDATA[14]]></token>
+	<token name="NUMBER_STATES"><![CDATA[4]]></token>
+	<token name="NUMBER_UNNAMED"><![CDATA[0]]></token>
+	<token name="NUMBER_VARIABLES"><![CDATA[28]]></token>
+	<token name="NUMBEROF_ABSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ADJOINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ALGEBRAICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ALGLOOPIN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ALGLOOPOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_AND"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ANTISYMMETRICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCCOSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCCOSHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCSINFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCSINHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCTANFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ARCTANHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ASSIGNMENT"><![CDATA[48]]></token>
+	<token name="NUMBEROF_ATAN2FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BACKDIVISION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITAND"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITCLEAR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITCMP"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITGET"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITINV"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITOR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSET"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSHIFT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSHIFTRIGHT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITSWAPBYTES"><![CDATA[0]]></token>
+	<token name="NUMBEROF_BITXOR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CASESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CEILFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CODESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_COLUMNSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONDITIONAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTANT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTRAINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTRAINTIN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CONSTRAINTOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_COSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_COSHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_CROSSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DATAFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DDTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEFAULTCASESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DELAYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEPENDENTRATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEPENDENTSTATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DEPENDENTSTATERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DERIVATIVEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DETFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DIAGFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETESTATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETESTATERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETETIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DISCRETETIMENODEWITHOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DIV"><![CDATA[10]]></token>
+	<token name="NUMBEROF_DIVISION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DLLDYNAMICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DLLFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_DOMATLABSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EFFORTCAUSALITYSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ELEMENTDIV"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ELEMENTMUL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ELEMENTPOWER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ENERGYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EQUALSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EQUATION"><![CDATA[48]]></token>
+	<token name="NUMBEROF_EVENTDOWNFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EVENTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EVENTUPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXP10FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXP2FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDCAUSALITYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDCOLLECTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDDIRECTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDFIRSTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDMULFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPANDEDSUMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXTERNALINPUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EXTERNALOUTPUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_EYEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FALSE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FINALSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FINISHTIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FLOORFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FLOWCAUSALITYSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FORSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FREQUENCYEVENTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_FROMMATLABSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_GAUSSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_GREATER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_GREATEREQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_HOLDFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_HOMOGENEOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_IFSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_IMPULSEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INITIALFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INITIALSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INITIALVALUE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_INNERFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INVERSEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_INVERSEHOMOGENEOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_JACOBIAN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LESS"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LESSEQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LIMINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LIMITFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LINEARSOLVEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LITERAL"><![CDATA[2]]></token>
+	<token name="NUMBEROF_LOG10FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LOG2FUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_LOGFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MAJOR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MAJORADJOINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MAXFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MIN"><![CDATA[12]]></token>
+	<token name="NUMBEROF_MINFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MODULO"><![CDATA[0]]></token>
+	<token name="NUMBEROF_MUL"><![CDATA[46]]></token>
+	<token name="NUMBEROF_MULTIPLYHOMOGENEOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NEXTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NONLINEARFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NORMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NORMINFFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_NOTEQUAL"><![CDATA[0]]></token>
+	<token name="NUMBEROF_OR"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PARAMETER"><![CDATA[14]]></token>
+	<token name="NUMBEROF_PLUS"><![CDATA[6]]></token>
+	<token name="NUMBEROF_PORT"><![CDATA[58]]></token>
+	<token name="NUMBEROF_PORTVARIABLE"><![CDATA[90]]></token>
+	<token name="NUMBEROF_POWER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREFIXMIN"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREFIXNOT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREFIXPLUS"><![CDATA[0]]></token>
+	<token name="NUMBEROF_PREVIOUSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RAMPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RANDOM"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RANDOMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RATE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_REALTIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_REPEATSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RESETFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RESINTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_RETURNSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ROUNDFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_ROWSFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SAMPLEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SAMPLETIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SETTOOLSETTINGFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SIGNFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SINFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SINHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SKEWFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SQRFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SQRTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STARTTIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STATE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_STATERATE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STEPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STEPSIZE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_STOPSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SUMFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SWITCHSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SYMMETRICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_SYSTEMVARIABLE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TABLEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TANFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TANHYPERBOLICFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TDELAYFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TILDEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIME"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIMEEVENTFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIMENODEWITHOUT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TIMETRIGGERFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TOMATLABSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRACEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRANSPOSEFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRIGGERDOWNFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRIGGERFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRIGGERUPFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRUE"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TRUNCFUNCTION"><![CDATA[0]]></token>
+	<token name="NUMBEROF_TYPEPARAMETER"><![CDATA[0]]></token>
+	<token name="NUMBEROF_UNNAMED"><![CDATA[2]]></token>
+	<token name="NUMBEROF_VARIABLE"><![CDATA[4]]></token>
+	<token name="NUMBEROF_WARNSTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_WHILESTATEMENT"><![CDATA[0]]></token>
+	<token name="NUMBEROF_XOR"><![CDATA[0]]></token>
+	<token name="OUTPUT_EQUATIONS"><![CDATA[]]></token>
+	<token name="OUTPUT_NAMES"><![CDATA[	"AnglePan",
+	"AngleTilt"
+]]></token>
+	<token name="OUTPUT_NAMES2"><![CDATA[	"AnglePan",
+	"AngleTilt"
+]]></token>
+	<token name="OUTPUT_NAMES3"><![CDATA[AnglePan
+AngleTilt
+]]></token>
+	<token name="OUTPUT_UNITS"><![CDATA[
+
+]]></token>
+	<token name="PARAMETER_NAMES"><![CDATA[	"Plant\\BeltPan\\r",
+	"Plant\\BeltTilt\\r",
+	"Plant\\DcamPan\\r",
+	"Plant\\DcamTilt\\r",
+	"Plant\\DmotPan\\r",
+	"Plant\\DmotTilt\\r",
+	"Plant\\GearPan\\r",
+	"Plant\\GearTilt\\r",
+	"Plant\\JcamPan\\i",
+	"Plant\\JcamTilt\\i",
+	"Plant\\JmotPan\\i",
+	"Plant\\JmotTilt\\i",
+	"Plant\\MotorPan\\r",
+	"Plant\\MotorTilt\\r"
+]]></token>
+	<token name="PARAMETER_NAMES2"><![CDATA[	"Plant_BeltPan_r",
+	"Plant_BeltTilt_r",
+	"Plant_DcamPan_r",
+	"Plant_DcamTilt_r",
+	"Plant_DmotPan_r",
+	"Plant_DmotTilt_r",
+	"Plant_GearPan_r",
+	"Plant_GearTilt_r",
+	"Plant_JcamPan_i",
+	"Plant_JcamTilt_i",
+	"Plant_JmotPan_i",
+	"Plant_JmotTilt_i",
+	"Plant_MotorPan_r",
+	"Plant_MotorTilt_r"
+]]></token>
+	<token name="PARAMETER_NAMES3"><![CDATA[Plant\BeltPan\r
+Plant\BeltTilt\r
+Plant\DcamPan\r
+Plant\DcamTilt\r
+Plant\DmotPan\r
+Plant\DmotTilt\r
+Plant\GearPan\r
+Plant\GearTilt\r
+Plant\JcamPan\i
+Plant\JcamTilt\i
+Plant\JmotPan\i
+Plant\JmotTilt\i
+Plant\MotorPan\r
+Plant\MotorTilt\r
+]]></token>
+	<token name="PARAMETER_UNITS"><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></token>
+	<token name="PARAMETER_VALUES"><![CDATA[1.0
+0.25
+2.0e-4
+1.0e-4
+1.77e-6
+4.0e-7
+0.05263157894736842
+0.05263157894736842
+3.0e-4
+4.5e-5
+2.06e-7
+5.28e-8
+0.018
+0.00701
+]]></token>
+	<token name="RATE_NAMES"><![CDATA[	"Plant\\JmotPan\\p.e",
+	"Plant\\JmotTilt\\p.e",
+	"Plant\\ThetaPan\\p1.omega",
+	"Plant\\ThetaTilt\\p1.omega"
+]]></token>
+	<token name="RATE_NAMES2"><![CDATA[	"Plant_JmotPan_p.e",
+	"Plant_JmotTilt_p.e",
+	"Plant_ThetaPan_p1.omega",
+	"Plant_ThetaTilt_p1.omega"
+]]></token>
+	<token name="RATE_NAMES3"><![CDATA[Plant\JmotPan\p.e
+Plant\JmotTilt\p.e
+Plant\ThetaPan\p1.omega
+Plant\ThetaTilt\p1.omega
+]]></token>
+	<token name="RATE_UNITS"><![CDATA[N.m
+N.m
+rad/s
+rad/s
+]]></token>
+	<token name="START_TIME"><![CDATA[0.0]]></token>
+	<token name="STATE_NAMES"><![CDATA[	"Plant\\JmotPan\\state",
+	"Plant\\JmotTilt\\state",
+	"Plant\\ThetaPan\\q",
+	"Plant\\ThetaTilt\\q"
+]]></token>
+	<token name="STATE_NAMES2"><![CDATA[	"Plant_JmotPan_state",
+	"Plant_JmotTilt_state",
+	"Plant_ThetaPan_q",
+	"Plant_ThetaTilt_q"
+]]></token>
+	<token name="STATE_NAMES3"><![CDATA[Plant\JmotPan\state
+Plant\JmotTilt\state
+Plant\ThetaPan\q
+Plant\ThetaTilt\q
+]]></token>
+	<token name="STATE_UNITS"><![CDATA[
+
+rad
+rad
+]]></token>
+	<token name="STATIC_EQUATIONS"><![CDATA[]]></token>
+	<token name="TIME_STEP_SIZE"><![CDATA[0.001]]></token>
+	<token name="USER_NAME"><![CDATA[20-sim 4.8 Campus License]]></token>
+	<token name="VARIABLE_NAMES"><![CDATA[	"Plant\\BeltPan\\p1.e",
+	"Plant\\BeltTilt\\p1.e",
+	"Plant\\DcamPan\\p.e",
+	"Plant\\DcamTilt\\p.e",
+	"Plant\\DmotPan\\p.e",
+	"Plant\\DmotTilt\\p.e",
+	"Plant\\GearPan\\p1.e",
+	"Plant\\GearPan\\p2.f",
+	"Plant\\GearTilt\\p1.e",
+	"Plant\\GearTilt\\p2.f",
+	"Plant\\JmotPan\\p.f",
+	"Plant\\JmotTilt\\p.f",
+	"Plant\\MotorPan\\p1.e",
+	"Plant\\MotorPan\\p2.e",
+	"Plant\\MotorTilt\\p1.e",
+	"Plant\\MotorTilt\\p2.e",
+	"Plant\\OneJunction3\\p3.T",
+	"Plant\\OneJunction4\\p3.T",
+	"Plant\\SteeringPan",
+	"Plant\\SteeringTilt",
+	"AnglePan",
+	"AngleTilt",
+	"SteeringPan",
+	"SteeringTilt",
+	"Plant\\JcamPan\\state",
+	"Plant\\JcamTilt\\state",
+	"Plant\\JcamPan\\p.T_in",
+	"Plant\\JcamTilt\\p.T_in"
+]]></token>
+	<token name="VARIABLE_NAMES2"><![CDATA[	"Plant_BeltPan_p1.e",
+	"Plant_BeltTilt_p1.e",
+	"Plant_DcamPan_p.e",
+	"Plant_DcamTilt_p.e",
+	"Plant_DmotPan_p.e",
+	"Plant_DmotTilt_p.e",
+	"Plant_GearPan_p1.e",
+	"Plant_GearPan_p2.f",
+	"Plant_GearTilt_p1.e",
+	"Plant_GearTilt_p2.f",
+	"Plant_JmotPan_p.f",
+	"Plant_JmotTilt_p.f",
+	"Plant_MotorPan_p1.e",
+	"Plant_MotorPan_p2.e",
+	"Plant_MotorTilt_p1.e",
+	"Plant_MotorTilt_p2.e",
+	"Plant_OneJunction3_p3.T",
+	"Plant_OneJunction4_p3.T",
+	"Plant_SteeringPan",
+	"Plant_SteeringTilt",
+	"AnglePan",
+	"AngleTilt",
+	"SteeringPan",
+	"SteeringTilt",
+	"Plant_JcamPan_state",
+	"Plant_JcamTilt_state",
+	"Plant_JcamPan_p.T_in",
+	"Plant_JcamTilt_p.T_in"
+]]></token>
+	<token name="VARIABLE_NAMES3"><![CDATA[Plant\BeltPan\p1.e
+Plant\BeltTilt\p1.e
+Plant\DcamPan\p.e
+Plant\DcamTilt\p.e
+Plant\DmotPan\p.e
+Plant\DmotTilt\p.e
+Plant\GearPan\p1.e
+Plant\GearPan\p2.f
+Plant\GearTilt\p1.e
+Plant\GearTilt\p2.f
+Plant\JmotPan\p.f
+Plant\JmotTilt\p.f
+Plant\MotorPan\p1.e
+Plant\MotorPan\p2.e
+Plant\MotorTilt\p1.e
+Plant\MotorTilt\p2.e
+Plant\OneJunction3\p3.T
+Plant\OneJunction4\p3.T
+Plant\SteeringPan
+Plant\SteeringTilt
+AnglePan
+AngleTilt
+SteeringPan
+SteeringTilt
+Plant\JcamPan\state
+Plant\JcamTilt\state
+Plant\JcamPan\p.T_in
+Plant\JcamTilt\p.T_in
+]]></token>
+	<token name="VARIABLE_TO_OUTPUT_EQUATIONS"><![CDATA[	y[0] = 	m_V[20];		/* AnglePan */
+	y[1] = 	m_V[21];		/* AngleTilt */
+]]></token>
+	<token name="VARIABLE_UNITS"><![CDATA[N.m
+N.m
+
+
+N.m
+N.m
+N.m
+N.m
+N.m
+
+N.m
+
+rad/s
+rad/s
+
+N.m
+
+N.m
+N.m
+N.m
+A
+A
+
+
+
+
+N.m.s
+N.m.s
+]]></token>
+	<token name="WORK_ARRAY_SIZE"><![CDATA[0]]></token>
+	<token name="XX_ALG_IN_ARRAY_NAME"><![CDATA[A]]></token>
+	<token name="XX_ALG_OUT_ARRAY_NAME"><![CDATA[a]]></token>
+	<token name="XX_DEP_RATE_ARRAY_NAME"><![CDATA[r]]></token>
+	<token name="XX_DEP_STATE_ARRAY_NAME"><![CDATA[S]]></token>
+	<token name="XX_EXT_IN_ARRAY_NAME"><![CDATA[e]]></token>
+	<token name="XX_EXT_OUT_ARRAY_NAME"><![CDATA[E]]></token>
+	<token name="XX_FAVORITE_PARS_ARRAY_NAME"><![CDATA[F]]></token>
+	<token name="XX_FAVORITE_VARS_ARRAY_NAME"><![CDATA[f]]></token>
+	<token name="XX_INITIAL_VALUE_ARRAY_NAME"><![CDATA[I]]></token>
+	<token name="INTEGRATION_METHOD_NAME"><![CDATA[Euler]]></token>
+	<token name="VARPREFIX"><![CDATA[m_]]></token>
+	<token name="FUNCTIONPREFIX"><![CDATA[XX]]></token>
+	<token name="XX_TIME"><![CDATA[time]]></token>
+	<token name="XX_INITIALIZE"><![CDATA[initialize]]></token>
+	<token name="XX_VARIABLE_ARRAY_NAME"><![CDATA[V]]></token>
+	<token name="XX_PARAMETER_ARRAY_NAME"><![CDATA[P]]></token>
+	<token name="XX_CONSTANT_ARRAY_NAME"><![CDATA[C]]></token>
+	<token name="XX_STATE_ARRAY_NAME"><![CDATA[s]]></token>
+	<token name="XX_RATE_ARRAY_NAME"><![CDATA[R]]></token>
+	<token name="XX_MATRIX_ARRAY_NAME"><![CDATA[M]]></token>
+	<token name="XX_UNNAMED_ARRAY_NAME"><![CDATA[U]]></token>
+	<token name="EVENT_DELTA"><![CDATA[1e-006]]></token>
+	<token name="FORMAJORVERSION"><![CDATA[4]]></token>
+	<token name="FORMINORVERSION"><![CDATA[5]]></token>
+	<token name="FORMAJORBUILD"><![CDATA[0]]></token>
+	<token name="FORMINORBUILD"><![CDATA[0]]></token>
+	<token name="MAJORVERSION"><![CDATA[4]]></token>
+	<token name="MINORVERSION"><![CDATA[8]]></token>
+	<token name="MAJORBUILD"><![CDATA[3]]></token>
+	<token name="MINORBUILD"><![CDATA[10415]]></token>
+	<token name="SKIP_SIMULINK_MODEL"><![CDATA[1]]></token>
+	<token name="SKIP_SIMULINK_SUBMODEL"><![CDATA[1]]></token>
+	<token name="SKIP_MODEL_CONFIGURATION"><![CDATA[1]]></token>
+	<token name="TEMPLATENAME"><![CDATA[CppClass]]></token>
+	<token name="TEMPLATEDIR"><![CDATA[C:\Program Files (x86)\20-sim 4.8\Ccode\CppClass\.]]></token>
+	<token name="TEMPLATE_DIR"><![CDATA[C:\Program Files (x86)\20-sim 4.8\Ccode\CppClass\.]]></token>
+	<token name="TOKENNAMES"><![CDATA[MODEL_NAME
+20SIM_DIR
+SUBMODEL_NAME
+ALGLOOP_NAMES
+ALGLOOP_NAMES2
+ALGLOOP_NAMES3
+ALGLOOP_UNITS
+ALIAS_EQUATIONS
+ALIAS_MATRIX_NAMES
+ALIAS_MATRIX_NAMES2
+ALIAS_MATRIX_NAMES3
+ALIAS_MATRIX_UNITS
+ALIAS_VARIABLE_INDICES
+ALIAS_VARIABLE_NAMES
+ALIAS_VARIABLE_NAMES2
+ALIAS_VARIABLE_NAMES3
+ALIAS_VARIABLE_UNITS
+COMPANY_NAME
+CONSTANT_NAMES
+CONSTANT_NAMES2
+CONSTANT_NAMES3
+CONSTANT_UNITS
+CONSTANT_VALUES
+CONSTRAINT_NAMES
+CONSTRAINT_NAMES2
+CONSTRAINT_NAMES3
+CONSTRAINT_UNITS
+DEPRATE_NAMES
+DEPRATE_NAMES2
+DEPRATE_NAMES3
+DEPRATE_UNITS
+DEPSTATE_NAMES
+DEPSTATE_NAMES2
+DEPSTATE_NAMES3
+DEPSTATE_UNITS
+DYNAMIC_EQUATIONS
+EXPERIMENT_NAME
+EXPORT_NAMES
+EXPORT_NAMES2
+EXPORT_NAMES3
+EXPORT_UNITS
+FAVORITE_PARAMETER_NAMES
+FAVORITE_PARAMETER_NAMES2
+FAVORITE_PARAMETER_NAMES3
+FAVORITE_PARAMETER_UNITS
+FAVORITE_PARS_EQUATIONS
+FAVORITE_VARIABLE_NAMES
+FAVORITE_VARIABLE_NAMES2
+FAVORITE_VARIABLE_NAMES3
+FAVORITE_VARIABLE_UNITS
+FAVORITE_VARS_EQUATIONS
+FILE_NAME
+FINAL_EQUATIONS
+FINISH_TIME
+GENERATION_BUILD
+GENERATION_DATE
+GENERATION_DIR
+GENERATION_TIME
+HIERARCHICAL_SUBMODEL_NAME
+IMPORT_NAMES
+IMPORT_NAMES2
+IMPORT_NAMES3
+IMPORT_UNITS
+INITIAL_EQUATIONS
+INITIAL_VALUE_NAMES
+INITIAL_VALUE_NAMES2
+INITIAL_VALUE_NAMES3
+INITIAL_VALUE_UNITS
+INITIAL_VALUE_VALUES
+INITIALIZE_ALIAS_MATRICES
+INITIALIZE_CONSTANTS
+INITIALIZE_FAVORITE_PARS
+INITIALIZE_FAVORITE_VARS
+INITIALIZE_INITIAL_VALUES
+INITIALIZE_INPUTS
+INITIALIZE_MATRICES
+INITIALIZE_OUTPUTS
+INITIALIZE_PARAMETERS
+INITIALIZE_PARAMETERS2
+INITIALIZE_STATES
+INPUT_EQUATIONS
+INPUT_NAMES
+INPUT_NAMES2
+INPUT_NAMES3
+INPUT_TO_VARIABLE_EQUATIONS
+INPUT_UNITS
+MATRIX_NAMES
+MATRIX_NAMES2
+MATRIX_NAMES3
+MATRIX_UNITS
+MODEL_DESCRIPTION
+MODEL_FILE
+MODEL_FUNCTION_NAME
+MODEL_IS_DISCRETE
+NUMBER_ALGLOOPS
+NUMBER_ALIAS_MATRICES
+NUMBER_ALIAS_VARIABLES
+NUMBER_CONSTANTS
+NUMBER_CONSTRAINTS
+NUMBER_DEPSTATES
+NUMBER_EXPORTS
+NUMBER_FAVORITE_PARAMETERS
+NUMBER_FAVORITE_VARIABLES
+NUMBER_IMPORTS
+NUMBER_INITIAL_VALUES
+NUMBER_INPUTS
+NUMBER_MATRICES
+NUMBER_OUTPUTS
+NUMBER_PARAMETERS
+NUMBER_STATES
+NUMBER_UNNAMED
+NUMBER_VARIABLES
+NUMBEROF_ABSFUNCTION
+NUMBEROF_ADJOINTFUNCTION
+NUMBEROF_ALGEBRAICFUNCTION
+NUMBEROF_ALGLOOPIN
+NUMBEROF_ALGLOOPOUT
+NUMBEROF_AND
+NUMBEROF_ANTISYMMETRICFUNCTION
+NUMBEROF_ARCCOSFUNCTION
+NUMBEROF_ARCCOSHYPERBOLICFUNCTION
+NUMBEROF_ARCSINFUNCTION
+NUMBEROF_ARCSINHYPERBOLICFUNCTION
+NUMBEROF_ARCTANFUNCTION
+NUMBEROF_ARCTANHYPERBOLICFUNCTION
+NUMBEROF_ASSIGNMENT
+NUMBEROF_ATAN2FUNCTION
+NUMBEROF_BACKDIVISION
+NUMBEROF_BITAND
+NUMBEROF_BITCLEAR
+NUMBEROF_BITCMP
+NUMBEROF_BITGET
+NUMBEROF_BITINV
+NUMBEROF_BITOR
+NUMBEROF_BITSET
+NUMBEROF_BITSHIFT
+NUMBEROF_BITSHIFTRIGHT
+NUMBEROF_BITSWAPBYTES
+NUMBEROF_BITXOR
+NUMBEROF_CASESTATEMENT
+NUMBEROF_CEILFUNCTION
+NUMBEROF_CODESTATEMENT
+NUMBEROF_COLUMNSFUNCTION
+NUMBEROF_CONDITIONAL
+NUMBEROF_CONSTANT
+NUMBEROF_CONSTRAINTFUNCTION
+NUMBEROF_CONSTRAINTIN
+NUMBEROF_CONSTRAINTOUT
+NUMBEROF_COSFUNCTION
+NUMBEROF_COSHYPERBOLICFUNCTION
+NUMBEROF_CROSSFUNCTION
+NUMBEROF_DATAFUNCTION
+NUMBEROF_DDTFUNCTION
+NUMBEROF_DEFAULTCASESTATEMENT
+NUMBEROF_DELAYFUNCTION
+NUMBEROF_DEPENDENTRATE
+NUMBEROF_DEPENDENTSTATE
+NUMBEROF_DEPENDENTSTATERATE
+NUMBEROF_DERIVATIVEFUNCTION
+NUMBEROF_DETFUNCTION
+NUMBEROF_DIAGFUNCTION
+NUMBEROF_DISCRETERATE
+NUMBEROF_DISCRETESTATE
+NUMBEROF_DISCRETESTATERATE
+NUMBEROF_DISCRETETIME
+NUMBEROF_DISCRETETIMENODEWITHOUT
+NUMBEROF_DIV
+NUMBEROF_DIVISION
+NUMBEROF_DLLDYNAMICFUNCTION
+NUMBEROF_DLLFUNCTION
+NUMBEROF_DOMATLABSTATEMENT
+NUMBEROF_EFFORTCAUSALITYSTATEMENT
+NUMBEROF_ELEMENTDIV
+NUMBEROF_ELEMENTMUL
+NUMBEROF_ELEMENTPOWER
+NUMBEROF_ENERGYFUNCTION
+NUMBEROF_EQUAL
+NUMBEROF_EQUALSTATEMENT
+NUMBEROF_EQUATION
+NUMBEROF_EVENTDOWNFUNCTION
+NUMBEROF_EVENTFUNCTION
+NUMBEROF_EVENTUPFUNCTION
+NUMBEROF_EXP10FUNCTION
+NUMBEROF_EXP2FUNCTION
+NUMBEROF_EXPANDEDCAUSALITYFUNCTION
+NUMBEROF_EXPANDEDCOLLECTFUNCTION
+NUMBEROF_EXPANDEDDIRECTFUNCTION
+NUMBEROF_EXPANDEDFIRSTFUNCTION
+NUMBEROF_EXPANDEDMULFUNCTION
+NUMBEROF_EXPANDEDSUMFUNCTION
+NUMBEROF_EXPFUNCTION
+NUMBEROF_EXTERNALINPUT
+NUMBEROF_EXTERNALOUTPUT
+NUMBEROF_EYEFUNCTION
+NUMBEROF_FALSE
+NUMBEROF_FINALSTATEMENT
+NUMBEROF_FINISHTIME
+NUMBEROF_FLOORFUNCTION
+NUMBEROF_FLOWCAUSALITYSTATEMENT
+NUMBEROF_FORSTATEMENT
+NUMBEROF_FREQUENCYEVENTFUNCTION
+NUMBEROF_FROMMATLABSTATEMENT
+NUMBEROF_GAUSSFUNCTION
+NUMBEROF_GREATER
+NUMBEROF_GREATEREQUAL
+NUMBEROF_HOLDFUNCTION
+NUMBEROF_HOMOGENEOUSFUNCTION
+NUMBEROF_IFSTATEMENT
+NUMBEROF_IMPULSEFUNCTION
+NUMBEROF_INITIALFUNCTION
+NUMBEROF_INITIALSTATEMENT
+NUMBEROF_INITIALVALUE
+NUMBEROF_INNERFUNCTION
+NUMBEROF_INTFUNCTION
+NUMBEROF_INVERSEFUNCTION
+NUMBEROF_INVERSEHOMOGENEOUSFUNCTION
+NUMBEROF_JACOBIAN
+NUMBEROF_LESS
+NUMBEROF_LESSEQUAL
+NUMBEROF_LIMINTFUNCTION
+NUMBEROF_LIMITFUNCTION
+NUMBEROF_LINEARSOLVEFUNCTION
+NUMBEROF_LITERAL
+NUMBEROF_LOG10FUNCTION
+NUMBEROF_LOG2FUNCTION
+NUMBEROF_LOGFUNCTION
+NUMBEROF_MAJOR
+NUMBEROF_MAJORADJOINTFUNCTION
+NUMBEROF_MAXFUNCTION
+NUMBEROF_MIN
+NUMBEROF_MINFUNCTION
+NUMBEROF_MODULO
+NUMBEROF_MUL
+NUMBEROF_MULTIPLYHOMOGENEOUSFUNCTION
+NUMBEROF_NEXTFUNCTION
+NUMBEROF_NONLINEARFUNCTION
+NUMBEROF_NORMFUNCTION
+NUMBEROF_NORMINFFUNCTION
+NUMBEROF_NOTEQUAL
+NUMBEROF_OR
+NUMBEROF_PARAMETER
+NUMBEROF_PLUS
+NUMBEROF_PORT
+NUMBEROF_PORTVARIABLE
+NUMBEROF_POWER
+NUMBEROF_PREFIXMIN
+NUMBEROF_PREFIXNOT
+NUMBEROF_PREFIXPLUS
+NUMBEROF_PREVIOUSFUNCTION
+NUMBEROF_RAMPFUNCTION
+NUMBEROF_RANDOM
+NUMBEROF_RANDOMFUNCTION
+NUMBEROF_RATE
+NUMBEROF_REALTIME
+NUMBEROF_REPEATSTATEMENT
+NUMBEROF_RESETFUNCTION
+NUMBEROF_RESINTFUNCTION
+NUMBEROF_RETURNSTATEMENT
+NUMBEROF_ROUNDFUNCTION
+NUMBEROF_ROWSFUNCTION
+NUMBEROF_SAMPLEFUNCTION
+NUMBEROF_SAMPLETIME
+NUMBEROF_SETTOOLSETTINGFUNCTION
+NUMBEROF_SIGNFUNCTION
+NUMBEROF_SINFUNCTION
+NUMBEROF_SINHYPERBOLICFUNCTION
+NUMBEROF_SKEWFUNCTION
+NUMBEROF_SQRFUNCTION
+NUMBEROF_SQRTFUNCTION
+NUMBEROF_STARTTIME
+NUMBEROF_STATE
+NUMBEROF_STATERATE
+NUMBEROF_STEPFUNCTION
+NUMBEROF_STEPSIZE
+NUMBEROF_STOPSTATEMENT
+NUMBEROF_SUMFUNCTION
+NUMBEROF_SWITCHSTATEMENT
+NUMBEROF_SYMMETRICFUNCTION
+NUMBEROF_SYSTEMVARIABLE
+NUMBEROF_TABLEFUNCTION
+NUMBEROF_TANFUNCTION
+NUMBEROF_TANHYPERBOLICFUNCTION
+NUMBEROF_TDELAYFUNCTION
+NUMBEROF_TILDEFUNCTION
+NUMBEROF_TIME
+NUMBEROF_TIMEEVENTFUNCTION
+NUMBEROF_TIMENODEWITHOUT
+NUMBEROF_TIMETRIGGERFUNCTION
+NUMBEROF_TOMATLABSTATEMENT
+NUMBEROF_TRACEFUNCTION
+NUMBEROF_TRANSPOSEFUNCTION
+NUMBEROF_TRIGGERDOWNFUNCTION
+NUMBEROF_TRIGGERFUNCTION
+NUMBEROF_TRIGGERUPFUNCTION
+NUMBEROF_TRUE
+NUMBEROF_TRUNCFUNCTION
+NUMBEROF_TYPEPARAMETER
+NUMBEROF_UNNAMED
+NUMBEROF_VARIABLE
+NUMBEROF_WARNSTATEMENT
+NUMBEROF_WHILESTATEMENT
+NUMBEROF_XOR
+OUTPUT_EQUATIONS
+OUTPUT_NAMES
+OUTPUT_NAMES2
+OUTPUT_NAMES3
+OUTPUT_UNITS
+PARAMETER_NAMES
+PARAMETER_NAMES2
+PARAMETER_NAMES3
+PARAMETER_UNITS
+PARAMETER_VALUES
+RATE_NAMES
+RATE_NAMES2
+RATE_NAMES3
+RATE_UNITS
+START_TIME
+STATE_NAMES
+STATE_NAMES2
+STATE_NAMES3
+STATE_UNITS
+STATIC_EQUATIONS
+TIME_STEP_SIZE
+USER_NAME
+VARIABLE_NAMES
+VARIABLE_NAMES2
+VARIABLE_NAMES3
+VARIABLE_TO_OUTPUT_EQUATIONS
+VARIABLE_UNITS
+WORK_ARRAY_SIZE
+XX_ALG_IN_ARRAY_NAME
+XX_ALG_OUT_ARRAY_NAME
+XX_DEP_RATE_ARRAY_NAME
+XX_DEP_STATE_ARRAY_NAME
+XX_EXT_IN_ARRAY_NAME
+XX_EXT_OUT_ARRAY_NAME
+XX_FAVORITE_PARS_ARRAY_NAME
+XX_FAVORITE_VARS_ARRAY_NAME
+XX_INITIAL_VALUE_ARRAY_NAME
+INTEGRATION_METHOD_NAME
+VARPREFIX
+FUNCTIONPREFIX
+XX_TIME
+XX_INITIALIZE
+XX_VARIABLE_ARRAY_NAME
+XX_PARAMETER_ARRAY_NAME
+XX_CONSTANT_ARRAY_NAME
+XX_STATE_ARRAY_NAME
+XX_RATE_ARRAY_NAME
+XX_MATRIX_ARRAY_NAME
+XX_UNNAMED_ARRAY_NAME
+EVENT_DELTA
+FORMAJORVERSION
+FORMINORVERSION
+FORMAJORBUILD
+FORMINORBUILD
+MAJORVERSION
+MINORVERSION
+MAJORBUILD
+MINORBUILD
+SKIP_SIMULINK_MODEL
+SKIP_SIMULINK_SUBMODEL
+SKIP_MODEL_CONFIGURATION
+TEMPLATENAME
+TEMPLATEDIR
+TEMPLATE_DIR
+]]></token>
+</tokens>
+
+

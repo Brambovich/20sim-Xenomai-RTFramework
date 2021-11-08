@@ -1,0 +1,73 @@
+Controller
+=============================================================
+
+INPUTS & OUTPUTS INDICES
+------------------------
+ 
+*** INPUTS ***
+
+	m_V[12] = u[0];		/* MeasuredPan */
+	m_V[13] = u[1];		/* MeasuredTilt */
+	m_V[14] = u[2];		/* SetPointPan */
+	m_V[15] = u[3];		/* SetPointTilt */
+
+ 
+*** OUTPUTS ***
+
+	y[0] = 	m_V[10];		/* SteeringPan */
+	y[1] = 	m_V[11];		/* SteeringTilt */
+
+ 
+
+
+
+
+NAMES
+-----
+
+[CONSTANTS]
+	NULL
+[PARAMETERS]
+	"ControllerPan\\PID_Pan\\kp",
+	"ControllerPan\\PID_Pan\\tauD",
+	"ControllerPan\\PID_Pan\\beta",
+	"ControllerPan\\PID_Pan\\tauI",
+	"ControllerTilt\\PID_Tilt\\kp",
+	"ControllerTilt\\PID_Tilt\\tauD",
+	"ControllerTilt\\PID_Tilt\\beta",
+	"ControllerTilt\\PID_Tilt\\tauI"
+
+[VARIABLES]
+	"ControllerPan\\PID_Pan\\output",
+	"ControllerPan\\PID_Pan\\pdout",
+	"ControllerPan\\PlusMinus1\\output",
+	"ControllerPan\\MeasuredPan",
+	"ControllerPan\\SetPointPan",
+	"ControllerTilt\\PID_Tilt\\output",
+	"ControllerTilt\\PID_Tilt\\pdout",
+	"ControllerTilt\\PlusMinus\\output",
+	"ControllerTilt\\MeasuredTilt",
+	"ControllerTilt\\SetPointTilt",
+	"SteeringPan",
+	"SteeringTilt",
+	"MeasuredPan",
+	"MeasuredTilt",
+	"SetPointPan",
+	"SetPointTilt"
+
+[STATES]
+	"ControllerPan\\PID_Pan\\pdstate",
+	"ControllerPan\\PID_Pan\\pistate",
+	"ControllerTilt\\PID_Tilt\\pdstate",
+	"ControllerTilt\\PID_Tilt\\pistate"
+
+[RATES]
+	"ControllerPan\\PID_Pan\\pdrate",
+	"ControllerPan\\PID_Pan\\pirate",
+	"ControllerTilt\\PID_Tilt\\pdrate",
+	"ControllerTilt\\PID_Tilt\\pirate"
+
+[MATRICES]
+	NULL
+
+
