@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.13)
 message(STATUS "Start configuration")
 
 SET(XENOMAI_XENO_CONFIG /usr/xenomai/bin/xeno-config)
-SET(MODELS Controller;Plant)
+SET(MODELS Controller;Plant;Submodel1)
 project(realtimecontroller)
 
 
@@ -122,10 +122,36 @@ target_include_directories(class_libaries PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
 target_link_libraries(class_libaries PRIVATE ${XENOMAI_POSIX_LIBRARIES})
 target_compile_definitions(class_libaries PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
 
-add_executable(main ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
-target_include_directories(main PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
-target_link_libraries(main PRIVATE model_libraries class_libaries)
-target_compile_definitions(main PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
+add_executable(jiwy_main ${CMAKE_CURRENT_SOURCE_DIR}/src/jiwy/main.cpp)
+target_include_directories(jiwy_main PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
+target_link_libraries(jiwy_main PRIVATE model_libraries class_libaries)
+target_compile_definitions(jiwy_main PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
+
+add_executable(realtime ${CMAKE_CURRENT_SOURCE_DIR}/src/real-time.cpp)
+target_include_directories(realtime PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
+target_link_libraries(realtime PRIVATE model_libraries class_libaries)
+target_compile_definitions(realtime PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
+
+add_executable(classtest ${CMAKE_CURRENT_SOURCE_DIR}/src/classTest.cpp)
+target_include_directories(classtest PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
+target_link_libraries(classtest PRIVATE model_libraries class_libaries)
+target_compile_definitions(classtest PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
+
+add_executable(test ${CMAKE_CURRENT_SOURCE_DIR}/src/test.cpp)
+target_include_directories(test PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
+target_link_libraries(test PRIVATE model_libraries class_libaries)
+target_compile_definitions(test PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
+
+add_executable(multiple ${CMAKE_CURRENT_SOURCE_DIR}/src/multipleModels.cpp)
+target_include_directories(multiple PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
+target_link_libraries(multiple PRIVATE model_libraries class_libaries)
+target_compile_definitions(multiple PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
+
+
+add_executable(own ${CMAKE_CURRENT_SOURCE_DIR}/src/ownThreadTest.cpp)
+target_include_directories(own PRIVATE ${XENOMAI_POSIX_INCLUDE_DIRS})
+target_link_libraries(own PRIVATE model_libraries class_libaries)
+target_compile_definitions(own PRIVATE ${XENOMAI_POSIX_DEFINITIONS})
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
@@ -135,6 +161,18 @@ target_link_libraries(non-real-time PRIVATE Threads::Threads)
 
 add_executable(logging ${CMAKE_CURRENT_SOURCE_DIR}/src/logging.cpp)
 target_link_libraries(non-real-time PRIVATE Threads::Threads)
+
+add_executable(receivetest ${CMAKE_CURRENT_SOURCE_DIR}/src/receivetest.cpp)
+target_link_libraries(receivetest PRIVATE Threads::Threads)
+
+add_executable(jiwy_setpoint ${CMAKE_CURRENT_SOURCE_DIR}/src/jiwy/setpoint.cpp)
+target_link_libraries(jiwy_setpoint PRIVATE Threads::Threads)
+
+add_executable(jiwy_logging ${CMAKE_CURRENT_SOURCE_DIR}/src/jiwy/logging.cpp)
+target_link_libraries(jiwy_logging PRIVATE Threads::Threads)
+
+
+
 
 
 

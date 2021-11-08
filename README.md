@@ -215,5 +215,31 @@ Also the original kernel image is saved, in the case that the kernel does not bo
 
 ## Setting up the xenomai-ROS2 library pipeline
 
-1. TODO
+1. Install cmake
+    ```console
+    pi@raspberrypi:~$ sudo apt-get -y install cmake
+    ```
+2. Clone this repository and create a build folder inside. 
+    ```console
+    pi@raspberrypi:~/xenomai-ros2-20sim-pipeline $ mkdir build && cd build
+    ```
+3. Inside the build folder, create a make file using cmake
+    ```console
+    pi@raspberrypi:~/xenomai-ros2-20sim-pipeline/build $ cmake ../
+    ```
+4. Run executable that is created. 
+src/jiwy contains jiwy example. The other files in src/ contain other examples. 
+These are all formed into executables by the cmake make file. Example:
 
+5. Open 3 ssh monitors to the rPi. 
+In each ssh window run one of the following commands, in order:
+    ```console
+    pi@raspberrypi:~/xenomai-ros2-20sim-pipeline/build $ sudo ./jiwy_setpoint
+    pi@raspberrypi:~/xenomai-ros2-20sim-pipeline/build $ sudo ./jiwy_logging
+    pi@raspberrypi:~/xenomai-ros2-20sim-pipeline/build $ sudo ./jiwy_main
+    ```
+6. Check if the correct threads are running by runninng xenomai thread statistics. 
+
+    ```console
+    pi@raspberrypi:~/xenomai-ros2-20sim-pipeline/build $ sudo cat /proc/xenomai/sched/stat
+    ```

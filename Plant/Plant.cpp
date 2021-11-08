@@ -65,7 +65,7 @@ Plant::Plant(void)
 	m_workarray = new XXDouble[0 + 1];
 
 	Reset(0.0);
-	m_finish_time = 300.0;
+	m_finish_time = 100.0;
 }
 
 void Plant::Reset(XXDouble starttime)

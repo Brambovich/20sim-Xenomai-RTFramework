@@ -73,29 +73,12 @@ IDDPconnection::~IDDPconnection()
     close(s);
 }
 
+void xenoCommunication::setVerbose(bool _verbose)
+{
+    verbose = _verbose;
+}
+
 int xenoCommunication::sendDouble(double toSend, int port)
-{
-    //printf("inside sending\n");
-    struct sockaddr_ipc sendAddr;
-    int ret;
-    sendAddr.sipc_family = AF_RTIPC;
-    sendAddr.sipc_port = port;
-    ret = sendto(s, &toSend, sizeof(toSend), MSG_DONTWAIT,
-                 (struct sockaddr *)&sendAddr, sizeof(sendAddr));
-    return ret;
-    //printf("%s: sent %d bytes, \"%f\"\n", __FUNCTION__, ret, toSend);
-}
-
-int xenoCommunication::sendDouble(double toSend)
-{
-    //printf("inside sending\n");
-    int ret;
-    ret = sendto(s, &toSend, sizeof(toSend), MSG_DONTWAIT, NULL, 0);
-    return ret;
-    //printf("%s: sent %d bytes, \"%f\"\n", __FUNCTION__, ret, toSend);
-}
-
-int xenoCommunication::sendDouble(double toSend, int port, bool verbose)
 {
     //printf("inside sending\n");
     struct sockaddr_ipc sendAddr;
@@ -121,16 +104,19 @@ int xenoCommunication::sendDoubleArray(double toSend[], int port, int size)
     sendAddr.sipc_port = port;
     ret = sendto(s, toSend, (size * sizeof(*toSend)), MSG_DONTWAIT,
                  (struct sockaddr *)&sendAddr, sizeof(sendAddr));
-    printf("%s - sent %d bytes:  ", protocol, (size * sizeof(*toSend)));
-    for (int i = 0; i < size; i++)
+    if (verbose)
     {
-        printf("%f", toSend[i]);
+        printf("%s - sent %d bytes:  ", protocol, (size * sizeof(*toSend)));
+        for (int i = 0; i < size; i++)
+        {
+            printf("%f", toSend[i]);
+        }
+        printf("  to port: %d from port %d - return: %d\n", port, receivePort, ret);
     }
-    printf("  to port: %d from port %d - return: %d\n", port, receivePort, ret);
     return ret;
 }
 
-int xenoCommunication::sendDouble(double toSend, bool verbose)
+int xenoCommunication::sendDouble(double toSend)
 {
     //printf("inside sending\n");
     int ret;
@@ -143,7 +129,7 @@ int xenoCommunication::sendDouble(double toSend, bool verbose)
     return ret;
 }
 
-int xenoCommunication::receiveRecentDouble(double *received, bool verbose)
+int xenoCommunication::receiveRecentDouble(double *received)
 {
 
     //printf("inside receiving\n");
@@ -187,7 +173,7 @@ int xenoCommunication::receiveDoubleArray(double received[], int size)
         {
 
             //sleep(1);
-            ret = receiveSingleDouble(&toReceive[i], false);
+            ret = receiveSingleDouble(&toReceive[i]);
         }
         //printf("size is %d = %d\n", size, (size * sizeof(double)));
         //ret = recvfrom(s, received, sizeof(*received), MSG_DONTWAIT, (struct sockaddr *)&recAddr, &addrlen);
@@ -197,23 +183,27 @@ int xenoCommunication::receiveDoubleArray(double received[], int size)
             ret_count++;
         }
     }
-
     if (ret_count > 0)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            received[i] = toReceive[i];
+        }
+    }
+    if (verbose)
     {
 
         printf("%s - received: ", protocol);
         for (int i = 0; i < size; i++)
         {
-            received[i] = toReceive[i];
             printf("%f", received[i]);
         }
         printf(" on port %d\n", receivePort);
     }
-
     return ret_count;
 }
 
-int xenoCommunication::receiveSingleDouble(double *received, bool verbose)
+int xenoCommunication::receiveSingleDouble(double *received)
 {
 
     //printf("inside receiving\n");
@@ -236,29 +226,7 @@ int xenoCommunication::receiveSingleDouble(double *received, bool verbose)
     return ret;
 }
 
-int xenoCommunication::receiveRecentDouble(double *received)
-{
-
-    //printf("inside receiving\n");
-    struct sockaddr_ipc recAddr;
-    int ret = 1;
-    int ret_count = 0;
-    //double received;
-    socklen_t addrlen;
-    addrlen = sizeof(addr);
-    while (ret > 0)
-    {
-        //ret = recvfrom(s, received, sizeof(*received), MSG_DONTWAIT, (struct sockaddr *)&recAddr, &addrlen);
-        ret = recvfrom(s, received, sizeof(*received), MSG_DONTWAIT, NULL, 0);
-        if (ret > 0)
-        {
-            ret_count++;
-        }
-    }
-    return ret_count;
-}
-
-int xenoCommunication::receiveSingleDouble(double *received)
+int xenoCommunication::receiveSingleDouble_WAIT(double *received)
 {
 
     //printf("inside receiving\n");
@@ -266,8 +234,17 @@ int xenoCommunication::receiveSingleDouble(double *received)
     int ret = 1;
     //double received;
     socklen_t addrlen;
+    double toReceive;
     addrlen = sizeof(addr);
+    //printf("before recvfrom\n");
     //ret = recvfrom(s, received, sizeof(*received), MSG_DONTWAIT, (struct sockaddr *)&recAddr, &addrlen);
-    ret = recvfrom(s, received, sizeof(*received), MSG_DONTWAIT, NULL, 0);
+    ret = recv(s, received, sizeof(*received), 0);
+    //printf("after...\n");
+
+    //printf("after...\n");
+    if (verbose)
+    {
+        printf("%s - received %d bytes, \"%f\" from port %d\n", protocol, ret, *received, addr.sipc_port);
+    }
     return ret;
 }

@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/syscall.h>
-
+#include "../include/gpioClass.h"
 #include "runnableClass.h"
 #include "superThread.h"
 #include <signal.h>
@@ -13,6 +13,10 @@ xenoThread::xenoThread(runnable *_runClass)
 }
 xenoThread::~xenoThread()
 {
+    if (timingLog)
+    {
+        loggingClass->~XDDPconnection();
+    }
     printf("close XenoThread\n");
 }
 void xenoThread::init(int _ns_period, int _priority, int _affinity)
@@ -81,6 +85,13 @@ void xenoThread::enableLogging(bool _timingLog, int _loggingPort)
     timingLog = _timingLog;
 }
 
+void xenoThread::enableGPIO(int pin)
+{
+    myGPIO = new xenoGPIO(pin);
+    gpiobool = true;
+    gpiopin = pin;
+}
+
 bool xenoThread::createThread()
 {
     return (pthread_create(&thread, &threadAttr, InternalThreadEntryFunc, this) == 0);
@@ -117,6 +128,10 @@ void xenoThread::toRun()
         {
             logTiming();
         }
+        if (gpiobool)
+        {
+            myGPIO->toggle();
+        }
         if (sigwait(&set, &signum) == -1)
             perror("sigwait");
     }
@@ -136,6 +151,7 @@ void xenoThread::stopThread()
 {
     pthread_cancel(thread);
     pthread_join(thread, NULL);
+    runClass->postrun();
     isRunning = false;
     return;
 }
@@ -151,15 +167,13 @@ void xenoThread::logTiming()
         toSend = toSend + (double)(nowTime.tv_sec - startTime.tv_sec - 1);
         toSend = toSend + ((double)(1000000000 + (nowTime.tv_nsec - startTime.tv_nsec))) / 1000000000;
         printf(" --- %lds %ldns\n", (nowTime.tv_sec - startTime.tv_sec - 1), (1000000000 + (nowTime.tv_nsec - startTime.tv_nsec)));
-        printf("IN DOUBLE: %f\n", ((double)(1000000000 + (nowTime.tv_nsec - startTime.tv_nsec))) / 1000000000);
     }
     else
     {
         toSend = toSend + (double)(nowTime.tv_sec - startTime.tv_sec);
         toSend = toSend + ((double)(nowTime.tv_nsec - startTime.tv_nsec)) / 1000000000;
         printf(" --- %lds %ldns ---\n", (nowTime.tv_sec - startTime.tv_sec), (nowTime.tv_nsec - startTime.tv_nsec));
-        printf("IN DOUBLE: %f\n", ((double)(nowTime.tv_nsec - startTime.tv_nsec)) / 1000000000);
     }
 
-    loggingClass->sendDouble(toSend, loggingPort, true);
+    loggingClass->sendDouble(toSend, loggingPort);
 }

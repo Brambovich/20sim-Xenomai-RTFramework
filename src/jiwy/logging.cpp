@@ -35,10 +35,10 @@ int main(int argc, char **argv)
 {
     //int numberOfLogs = argv[0];
     //
+    printf("start logging...\n");
     int numberOfLogs;
     if (timing)
     {
-        // numberOfLogs = 1;
         numberOfLogs = 2;
     }
     else
@@ -49,18 +49,17 @@ int main(int argc, char **argv)
     int fd[numberOfLogs];
     for (int i = 0; i < numberOfLogs; i++)
     {
-        openport(&fd[i], (20 + i));
+        openport(&fd[i], (25 + i));
+        printf("opened port %d\n", i);
     }
     int ret;
     std::ofstream myfile;
-    myfile.open("timing.csv");
+    myfile.open("jiwy_timing.csv");
     if (timing)
     {
-        myfile << "thread1,"
-               << "thread2"
+        myfile << "PlantTime,"
+               << "ControllerTime"
                << "\n";
-        // myfile << "thread1"
-        //        << "\n";
     }
     else
     {
@@ -85,7 +84,7 @@ int main(int argc, char **argv)
                 myfile << ",";
             }
         }
-        if (received[0] > 10)
+        if (received[1] > 10)
         {
             break;
         }

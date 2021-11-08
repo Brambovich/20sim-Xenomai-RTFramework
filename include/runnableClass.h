@@ -16,12 +16,7 @@ public:
     virtual void step() = 0;
     virtual void setSize(int uSize, int ySize) = 0;
     virtual void enableGPIO(int pin) = 0;
-};
-
-class ownThread : public runnable
-{
-public:
-    ownThread(bool x) { printf("init ownThread with bool: %d\n", x); }
+    virtual void setVerbose(bool verbose) = 0;
 };
 
 template <typename T>
@@ -73,6 +68,18 @@ public:
         y = (double *)calloc(ySize, sizeof(double));
         sizesSet = true;
     }
+    void setVerbose(bool _verbose)
+    {
+        verbose = _verbose;
+        for (int i = 0; i < sendArraySize; i++)
+        {
+            sendClass[i]->setVerbose(verbose);
+        }
+        for (int i = 0; i < receiveArraySize; i++)
+        {
+            receiveClass[i]->setVerbose(verbose);
+        }
+    }
     /**
      * @brief Initialization function
      * Prerun function containing all prerun functionality and initialization of the 20-sim-submodel.
@@ -108,20 +115,25 @@ public:
         {
             receiveClass[i]->receive(u);
         }
-
-        for (int u_it = 0; u_it < uSize; u_it++)
+        if (verbose)
         {
-            printf("u[%d] = %f  ---  ", u_it, u[u_it]);
+            for (int i_u = 0; i_u < uSize; i_u++)
+            {
+                printf(" --- u[%d] = %f", i_u, u[i_u]);
+            }
+            printf("\n");
         }
-        printf("\n");
-        for (int y_it = 0; y_it < ySize; y_it++)
-        {
-            printf("y[%d] = %f  ---  ", y_it, y[y_it]);
-        }
-        printf("\n");
-
+        //printf(" 2 u[1] = %f\n", u[1]);
         simclass20->Calculate(u, y);
-
+        if (verbose)
+        {
+            for (int i_y = 0; i_y < ySize; i_y++)
+            {
+                printf(" --- y[%d] = %f", i_y, y[i_y]);
+            }
+            printf("\n");
+        }
+        //receive all the values from the set receive class array
         for (int i = 0; i < sendArraySize; i++)
         {
             sendClass[i]
@@ -145,6 +157,7 @@ public:
 private:
     bool gpiobool = false;
     bool sizesSet = false;
+    bool verbose = false;
     int gpiopin;
     T *simclass20;
     xenoGPIO *myGPIO;
